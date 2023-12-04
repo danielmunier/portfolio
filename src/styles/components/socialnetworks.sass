@@ -1,0 +1,30 @@
+@use '../variables'
+@use '../mixins'
+
+#social-networks
+    text-decoration: none
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 1rem
+    margin: 1rem 0
+    flex-direction: row
+
+    .social-btn
+        padding: .4rem
+        border-radius: 5px
+        color: #888888
+        font-size: 1.3rem
+
+    #linkedin
+        color: #0072B1
+
+    #github
+        color: #000000
+
+    #gmail
+        color: #e93c2c
+
+    :hover
+        > svg
+            color: variables.$text-color

@@ -1,0 +1,21 @@
+@use './variables'
+
+@mixin btn
+    padding: 1rem 1.2rem
+    color: variables.$text-color
+    background: variables.$bg-color
+    text-decoration: none
+    border-radius: 3rem
+
+
+@mixin link-styles
+    color: inherit
+    text-decoration: none
+    background: linear-gradient(to right, variables.$bg-color-secondary,variables.$bg-color-secondary),linear-gradient(to right,variables.$bg-color,  variables.$bg-color, variables.$bg-color)
+    background-size: 100% 1px, 0 1px
+    background-position: 100% 100%, 0 100%
+    background-repeat: no-repeat
+    transition: background-size 500ms
+
+    &:hover
+        background-size: 0 1px, 100% 1px
