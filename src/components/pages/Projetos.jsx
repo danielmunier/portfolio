@@ -1,5 +1,5 @@
 //import React from 'react'
-import "../styles/components/main.sass";
+import "../../styles/components/main.sass";
 
 const Projetos = () => {
   return (
