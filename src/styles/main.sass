@@ -1,16 +1,23 @@
 @use 'variables'
-    
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Ropa+Sans&family=Space+Grotesk:wght@700&display=swa')
 *
     padding: 0
     margin: 0
-    font-family: variables.$font-stack
+    font-family: 'Ropa Sans', sans-serif
     box-sizing: border-box
 
 
-body 
-    background: variables.$bg-color
-    color: variables.$text-color
 
+html
+    scroll-behavior: smooth
+
+body 
+    color: #333333
+
+:target 
+    scroll-margin-top: .8em
 
 
 a, svg 

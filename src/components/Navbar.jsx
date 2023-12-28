@@ -1,18 +1,19 @@
 //import React from 'react'
-import '../styles/components/navbar.sass'
-import {Link} from "react-router-dom";
-
+import "../styles/components/navbar.sass";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    return <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/projetos">Projetos</Link></li>
-          <li><Link to="/form">Message now</Link></li>
+  return (
+    <nav>
+      <h2>Daniel Munier</h2>
 
-        </ul>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
     </nav>
-}
+  );
+};
 
-
-export default Navbar
+export default Navbar;
