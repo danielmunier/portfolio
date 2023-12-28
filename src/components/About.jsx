@@ -6,33 +6,25 @@ const About = () => {
     <section id="about">
       <div className="me">
         <h2>Sobre mim</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur
-          minima asperiores corrupti alias, pariatur perspiciatis nihil hic.
-          Necessitatibus totam alias delectus sequi quos, ad quis eos ea cum
-          inventore modi.
-        </p>
+       
       </div>
 
       <div class="info">
         <div class="info-description">
           <h2>Get to know me</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-            rerum odit quos mollitia nostrum, animi suscipit necessitatibus,
-            maiores sit ad itaque tempore natus ducimus dignissimos consequatur
-            commodi sequi pariatur assumenda.
+          Sou um desenvolvedor com paixão por tecnologia e um forte desejo de aprender e crescer. Atualmente cursando bacharelado em Ciência da computação no Rio de Janeiro - RJ.
           </p>
 
           
           <div>
-           <Button text="Contato" href="#contact" fontColor="#FFF" bgColor="#7159c1" />
+           <Button text="Contato" href="#contact" fontColor="#FFF" bgColor="#0C1012" />
           </div>
 
 
         </div>
         <div class="skills">
-          <h2>My Skills</h2>
+          <h2>Habilidades</h2>
           <ul>
             <li className="skill-item">HTML</li>
             <li className="skill-item">CSS</li>

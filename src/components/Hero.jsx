@@ -6,16 +6,13 @@ const Hero = () => {
   return (
     <section id="hero">
       <div id="container-hero">
-        <SocialNetworks />
+        <SocialNetworks flexDirection="flex-column" />
 
         <div class="about">
           <div class="about_info">
             <h1>Hey there, I'm Daniel</h1>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste,
-              reprehenderit? Laboriosam ipsa magnam illo quidem cum nam expedita
-              corrupti dicta cupiditate nulla. Modi dolores, consequatur
-              sapiente maiores nulla minus magnam.
+              Sou um desenvolvedor Fullstack, atualmente me especializando em NextJs, Node, Typescript e mais.
             </p>
             <div>
               <Button text="Meus projetos" href="#projects" fontColor="black"/>

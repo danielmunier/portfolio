@@ -1,19 +1,24 @@
 import "../styles/components/socialnetworks.sass";
 
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaDirections } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 
-const socialNetworks = [
-  { name: "linkedin", icon: <FaLinkedin />, href:"https://www.linkedin.com/in/danielmunier27/"},
-  { name: "github", icon: <FaGithub />, href: "https://github.com/danielmunier" },
-  { name: "gmail", icon: <IoMail />, href: "mailto:idanielmunier@gmail.com" },
-  { name: "instagram", icon: <FaInstagram />, href: "https://instagram.com/" },
-];
 
-const SocialNetworks = () => {
+
+const SocialNetworks = ({flexDirection, color}) => {
+
+  const socialNetworks = [
+    { name: "linkedin", icon: <FaLinkedin color={color} />, href:"https://www.linkedin.com/in/danielmunier27/"},
+    { name: "github", icon: <FaGithub color={color} />, href: "https://github.com/danielmunier" },
+    { name: "gmail", icon: <IoMail color={color} />, href: "mailto:idanielmunier@gmail.com" },
+    { name: "instagram", icon: <FaInstagram color={color} />, href: "https://instagram.com/" },
+  ];
+
+  const containerClass = `social-networks ${flexDirection}`;
+
   return (
     <div className="social-media">
-      <ul id="social-networks">
+      <ul class={containerClass}>
         {socialNetworks.map((network) => (
           <a
             target="_blank"

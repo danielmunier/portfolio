@@ -1,7 +1,7 @@
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import "../styles/components/projectItem.sass";
 
-const ProjectItem = ({ title, description, urlImage, urlRepository }) => {
+const ProjectItem = ({ title, description, urlImage, urlRepository, urlSite }) => {
   return (
     <div class="project">
       <div className="container-image">
@@ -13,11 +13,11 @@ const ProjectItem = ({ title, description, urlImage, urlRepository }) => {
         <div className="project-action">
           <button>
             <FaExternalLinkAlt />
-            <a href="https://github.com/danielmunier/netflix">Saiba mais</a>
+            <a href={urlSite}>Saiba mais</a>
           </button>
           <button>
             <FaGithub />
-            <a href="https://github.com/danielmunier/netflix">Repositório</a>
+            <a href={urlRepository}>Repositório</a>
           </button>
         </div>
       </div>
