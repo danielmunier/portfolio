@@ -6,6 +6,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
+
 function App() {
   return (
     <Router>
@@ -14,6 +15,7 @@ function App() {
       <About/>
       <Projects/>
       <Form/>
+      <Footer/>
     </Router>
   );
 }
