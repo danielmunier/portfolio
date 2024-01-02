@@ -3,8 +3,11 @@
 
 nav
     display: flex
+    background: #0C1012
     flex-direction: row
     align-items: center
+    position: fixed
+    width: 100%
     justify-content: space-around
     padding: 3vh
     font-size: 1.2rem
@@ -12,8 +15,22 @@ nav
 
     a 
         text-decoration: none
+        color: white
+
 
     ul 
         display: flex
         gap: 1vw
         list-style: none
+
+#menu-button
+    display: none
+
+@media screen and ( max-width: 500px )
+
+    nav
+        position: absolute
+        top: 0
+
+    #menu-button
+        display: block
