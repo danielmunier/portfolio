@@ -1,4 +1,4 @@
-
+import "../styles/components/Button.sass"
 const Button = ({text, bgColor, fontColor, href, link}) => {
     return (
 
