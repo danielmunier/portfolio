@@ -1,7 +1,7 @@
 @use '../variables'
 
 
-nav
+header
     display: flex
     background: #0C1012
     flex-direction: row
@@ -28,9 +28,25 @@ nav
 
 @media screen and ( max-width: 500px )
 
+    .mobile 
+        width: 100%
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+
+    header
+        flex-direction: column
+
     nav
-        position: absolute
-        top: 0
+        display: none
+
+
+    ul
+        padding: 20px
+        flex-direction: column
 
     #menu-button
+        padding: 20px
         display: block
+        color: white
