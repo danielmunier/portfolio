@@ -3,7 +3,7 @@ import { skills } from "../data/skills";
 
 const Technologies = () => {
     // Mapeia os ícones disponíveis no pacote react-icons/si
-    const iconComponents: Record<string, React.ComponentType> = {};
+    const iconComponents: Record<string, React.ComponentType<{ className?: string }>> = {};
     Object.keys(Si).forEach(key => {
         iconComponents[key] = Si[key as keyof typeof Si];
     });
@@ -23,7 +23,6 @@ const Technologies = () => {
                                 <Icon className="w-5 h-5" /> 
                             ) : (
                                 <div className="w-5 h-5 flex items-center justify-center text-gray-500">
-                              
                                     <span className="text-sm">N/A</span>
                                 </div>
                             )}
