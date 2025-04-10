@@ -9,14 +9,14 @@ const Technologies = () => {
     });
 
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 bg-[#151B28] gap-4 p-4 rounded-md">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 bg-component gap-4 p-4 rounded-md">
             {skills.map((skill, index) => {
                 const Icon = iconComponents[skill.icon];
 
                 return (
                     <div key={index} className="rounded-md group">
                         <div
-                            className="h-full border-b rounded-md transition-all hover:scale-105 bg-[#1E2330] p-3 flex flex-col items-center justify-center cursor-pointer"
+                            className="h-full border-b rounded-md transition-all hover:scale-105 bg-card p-3 flex flex-col items-center justify-center cursor-pointer"
                             style={{ color: skill.color }}
                         >
                             {Icon ? (

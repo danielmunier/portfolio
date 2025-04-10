@@ -16,7 +16,10 @@ const ProjectsGrid = () => {
                                 <div key={index}>
                                     <ProjectCard
                                         title={project.title}
-                                        description={project.description} />
+                                        description={project.description} 
+                                        repoLink={project.repoLink}
+                                        liveDemoLink={project.liveDemoLink}
+                                        />
                                 </div>
                             )
                         })

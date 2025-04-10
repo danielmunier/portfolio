@@ -5,7 +5,7 @@ import { FaLink, FaGithub, FaLinkedin, FaGit } from "react-icons/fa";
 
 const About: React.FC = () => {
     return (
-        <div className="bg-[#F8FAFC] dark:bg-[#151B28] rounded-lg p-4 h-full transition-colors">
+        <div className=" rounded-lg p-4 h-full transition-colors bg-component">
             <div className="flex flex-col h-full">
                 <div className="flex flex-col md:flex-row gap-6 mt-8">
                     <div className="flex-shrink-0">
@@ -25,10 +25,11 @@ const About: React.FC = () => {
                                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">@danielmunier</p>
                             </div>
 
-                            <div className="flex-1 bg-gray-50 dark:bg-[#1E2330] rounded-lg p-4 mb-8 mt-4">
+                            <div className="flex-1 bg-gray-50 dark:bg-card rounded-lg p-4 mb-8 mt-4">
                                 <div className="space-y-3">
                                     <p className="text-md text-gray-600 dark:text-gray-300 leading-relaxed">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, architecto odio, fugit odit voluptate quaerat non eum unde repudiandae corrupti iusto ipsam. Maxime, voluptas suscipit et nam beatae accusamus soluta.
+                                    Computer Science student passionate about technology. Experienced in web development (JavaScript, TypeScript, React, Node.js), API consumption, Python, and Linux. Always seeking new learning opportunities and challenges.
+
                                     </p>
 
                                 </div>
