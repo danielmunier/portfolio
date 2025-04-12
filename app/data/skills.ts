@@ -11,7 +11,6 @@ interface Skill {
     { name: 'Next.js', icon: 'SiNextdotjs', color: '#000000' },
     { name: 'Tailwind', icon: 'SiTailwindcss', color: '#06B6D4' },
     { name: 'Node.js', icon: 'SiNodedotjs', color: '#339933' },
-    { name: 'Express', icon: 'SiExpress', color: '#000000' },
     { name: 'MongoDB', icon: 'SiMongodb', color: '#47A248' },
     { name: 'MySQL', icon: 'SiMysql', color: '#4479A1' },
     { name: 'Prisma', icon: 'SiPrisma', color: '#2D3748' },

@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Daniel Munier",
-  description: "Portfolio made with Typescript",
+  description: "Full Stack Developer | Portfolio showcasing projects, skills, and experience in web development.",
 };
+
 
 export default function RootLayout({
   children,

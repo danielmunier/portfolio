@@ -5,24 +5,27 @@ interface Project {
     liveDemoLink?: string;
 
 }
-
 export const projects: Project[] = [
-
-    {   title: 'Pochi Bot', 
-        description: 'Bot made to periodically notify on Discord channels about new posts of an instagram profile.', 
-        repoLink: 'https://github.com/danielmunier/pochi' 
+    {
+        title: 'Pochi Bot',
+        description: 'Bot desenvolvido para ajudar na administração de servidores do Discord.',
+        repoLink: 'https://github.com/danielmunier/pochi',
     },
-    {   title: 'product-page', 
-        description: 'A product page built with ReactJS, based on a Frontend Mentor challenge.', 
-        repoLink: 'https://github.com/danielmunier/pochi' 
+    {
+        title: 'Docflix',
+        description: 'Clone do serviço de streaming Netflix, desenvolvido para fins didáticos e aprendizado.',
+        repoLink: 'https://github.com/danielmunier/netflix',
+        liveDemoLink: 'https://docflix.vercel.app/',
     },
-    {   title: 'product-page', 
-        description: 'A product page built with ReactJS, based on a Frontend Mentor challenge.', 
-        repoLink: 'https://github.com/danielmunier/pochi' 
+    {
+        title: 'Portfólio',
+        description: 'Site de portfólio criado para apresentar meus projetos e habilidades de desenvolvimento.',
+        repoLink: 'https://github.com/danielmunier/portfolio',
     },
-    {   title: 'product-page', 
-        description: 'A product page built with ReactJS, based on a Frontend Mentor challenge.', 
-        repoLink: 'https://github.com/danielmunier/pochi' 
-    }
-
+    {
+        title: 'Lince Corporate',
+        description: 'Site desenvolvido como freelancer para a empresa Lince Corporate, destacando seus serviços e projetos.',
+        repoLink: 'https://github.com/danielmunier/lince_next',
+        liveDemoLink: 'https://lincecorporate.com.br',
+    },
 ];

@@ -13,25 +13,25 @@ interface TimelineItem {
 const educationItems: TimelineItem[] = [
   {
     type: 'education',
-    title: 'Bachelor of Computer Science',
-    organization: 'UniAmérica Descomplica University',
-    date: 'Aug 2023 - May 2027',
+    title: 'Bacharelado em Ciência da Computação',
+    organization: 'Universidade UniAmérica Descomplica',
+    date: 'Ago 2023 - Mai 2027',
     description:
-      'Comprehensive education combining theoretical knowledge and practical skills in Full Stack Development. Focused on modern web technologies, software engineering principles, and agile methodologies.',
-    skills: ['JavaScript', 'React', 'Node.js', 'SQL', 'Agile Methodologies'],
+      'Formação abrangente combinando conhecimento teórico e habilidades práticas em Desenvolvimento Full Stack. Foco em tecnologias web modernas, princípios de engenharia de software e metodologias ágeis.',
+    skills: ['JavaScript', 'React', 'Node.js', 'SQL', 'Metodologias Ágeis'],
   },
 ];
 
 const experienceItems: TimelineItem[] = [
   {
     type: 'experience',
-    title: 'Full Stack Developer',
+    title: 'Técnico de informática',
     organization: 'Lince Corporate',
     date: 'Jan 2022 - Mar 2023',
-    location: 'Rio de Janeiro, Brazil',
+    location: 'Rio de Janeiro, Brasil',
     description:
-      'Developed and maintained visually appealing and informative websites to showcase the company’s services and projects. Implemented an automated email system to optimize communication. Provided hardware support, including computer assembly and maintenance.',
-    skills: ['JavaScript', 'HTML', 'CSS', 'Email Automation'],
+      'Ofereci suporte de hardware, incluindo montagem e manutenção de computadores. Também desenvolvi e mantive sites visualmente atraentes e informativos para destacar os serviços e projetos da empresa. Implementei um sistema automatizado de e-mails para otimizar a comunicação. ',
+    skills: ['JavaScript', 'HTML', 'CSS', 'Automação de e-mails'],
   },
 ];
 
@@ -74,7 +74,7 @@ const Timeline: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-            Experience
+            Experiência
           </h2>
           {experienceItems.map((item, index) => (
             <TimelineItem key={index} item={item} />
@@ -82,7 +82,7 @@ const Timeline: React.FC = () => {
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-            Education
+            Educação
           </h2>
           {educationItems.map((item, index) => (
             <TimelineItem key={index} item={item} />
