@@ -2,7 +2,6 @@ import * as Si from 'react-icons/si';
 import { skills } from "../data/skills";
 
 const Technologies = () => {
-    // Mapeia os ícones disponíveis no pacote react-icons/si
     const iconComponents: Record<string, React.ComponentType<{ className?: string }>> = {};
     Object.keys(Si).forEach(key => {
         iconComponents[key] = Si[key as keyof typeof Si];

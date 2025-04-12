@@ -17,14 +17,12 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 backdrop-blur-md shadow-md">
       <nav className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center h-16">
-          {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="text-3xl font-bold text-white">
               
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navLinks.map((link) => (

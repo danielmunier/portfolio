@@ -5,6 +5,7 @@ import About from "./components/About";
 import Navbar from "./components/Nav";
 import Timeline from "./components/Timeline";
 import Languages from "./components/Languages";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
 
         </div>
           <Timeline/>
+          <Contact/>
       </div>
     </div>
   );

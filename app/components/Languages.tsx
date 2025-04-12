@@ -7,9 +7,9 @@ interface Language {
 }
 
 const languages: Language[] = [
-  { name: 'English', level: 'Learning', flag: '🇬🇧' },
-  { name: 'Portuguese', level: 'Native', flag: '🇧🇷' },
-  { name: 'Japanese', level: 'Learning', flag: '🇯🇵' },
+  { name: 'Inglês', level: 'Learning', flag: '🇬🇧' },
+  { name: 'Português', level: 'Native', flag: '🇧🇷' },
+  { name: 'Japonês', level: 'Learning', flag: '🇯🇵' },
 ];
 
 interface LanguageCardProps {
@@ -33,7 +33,7 @@ const LanguageCard: React.FC<LanguageCardProps> = ({ language, index }) => (
         className="h-full bg-gradient-to-r from-blue-500 to-blue-400"
         style={{
           width: language.level === 'Native' ? '100%' :
-            language.level === 'Fluent' ? '90%' :
+            language.level === 'Fluent' ? '10%' :
               language.level === 'Learning' ? '40%' : '0%'
         }}
       />
@@ -45,7 +45,7 @@ const Languages: React.FC = () => {
   return (
     <div className="bg-[#F8FAFC] dark:bg-[#151B28] rounded-lg p-6 shadow-md">
       <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-6">
-        Languages
+        Idiomas
       </h2>
       <div className="space-y-2">
         {languages.map((language, index) => (
