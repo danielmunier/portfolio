@@ -17,7 +17,7 @@ const educationItems: TimelineItem[] = [
     organization: 'Universidade UniAmérica Descomplica',
     date: 'Ago 2023 - Mai 2027',
     description:
-      'Formação abrangente combinando conhecimento teórico e habilidades práticas em Desenvolvimento Full Stack. Foco em tecnologias web modernas, princípios de engenharia de software e metodologias ágeis.',
+      'Formação combinando conhecimento teórico e habilidades práticas em desenvolvimento. Foco em tecnologias modernas, princípios de engenharia de software e metodologias ágeis.',
     skills: ['JavaScript', 'React', 'Node.js', 'SQL', 'Metodologias Ágeis'],
   },
 ];
@@ -31,7 +31,7 @@ const experienceItems: TimelineItem[] = [
     location: 'Rio de Janeiro, Brasil',
     description:
       'Ofereci suporte de hardware, incluindo montagem e manutenção de computadores. Também desenvolvi e mantive sites visualmente atraentes e informativos para destacar os serviços e projetos da empresa. Implementei um sistema automatizado de e-mails para otimizar a comunicação. ',
-    skills: ['JavaScript', 'HTML', 'CSS', 'Automação de e-mails'],
+    skills: ['JavaScript', 'HTML', 'CSS', 'Automação de e-mails', 'Hardware'],
   },
 ];
 

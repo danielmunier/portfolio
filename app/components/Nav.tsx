@@ -6,8 +6,8 @@ import { Home, Briefcase, BookOpen, Box, Contact } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/", icon: Home },
-  { name: "Projetos", href: "/projects", icon: Briefcase },
-  { name: "Contato", href: "/", icon: Contact },
+  { name: "Projetos", href: "#projects", icon: Briefcase },
+  { name: "Contato", href: "#contact", icon: Contact },
 ];
 
 export default function Navbar() {

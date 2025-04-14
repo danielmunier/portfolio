@@ -6,7 +6,7 @@ const ProjectsGrid = () => {
 
     return (
         <>
-            <div className="dark:bg-[#151B28] p-6 rounded">
+            <div className="dark:bg-[#151B28] p-6 rounded" id="projects">
                 <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-6">
                     Projetos
                 </h2>
@@ -27,6 +27,8 @@ const ProjectsGrid = () => {
                             )
                         })
                     }
+
+                    
 
                 </div>
             </div>

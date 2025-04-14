@@ -19,5 +19,6 @@ interface Skill {
     { name: 'Docker', icon: 'SiDocker', color: '#2496ED' },
     { name: 'VSCode', icon: 'SiVisualstudiocode', color: '#007ACC' },
     { name: 'Python', icon: 'SiPython', color: '#3776AB' },
+    {name: 'Linux', icon: 'SiLinux', color:"#F05032"}
 
   ];

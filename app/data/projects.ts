@@ -13,7 +13,7 @@ export const projects: Project[] = [
     },
     {
         title: 'Docflix',
-        description: 'Clone do serviço de streaming Netflix, desenvolvido para fins didáticos e aprendizado.',
+        description: 'Clone do serviço de streaming Netflix, desenvolvido para fins didáticos.',
         repoLink: 'https://github.com/danielmunier/netflix',
         liveDemoLink: 'https://docflix.vercel.app/',
     },
