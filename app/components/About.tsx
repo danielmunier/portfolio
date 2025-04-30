@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import ProfileImage from "../assets/me.jpg";
+import ProfileImage from "../assets/me.png";
 import { FaLink, FaGithub, FaLinkedin, FaGit } from "react-icons/fa";
 
 const About: React.FC = () => {
@@ -12,7 +12,7 @@ const About: React.FC = () => {
                         <Image
                             src={ProfileImage}
                             alt="Foto de perfil de Daniel"
-                            className="rounded-full w-20 h-20 md:w-24 md:h-24 object-cover ring-2 ring-blue-500/20"
+                            className=" bg-black rounded-full w-20 h-20 md:w-24 md:h-24 object-cover ring-2 ring-blue-500/20"
                             priority
                         />
                     </div>

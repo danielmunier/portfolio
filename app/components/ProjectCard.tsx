@@ -14,8 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     liveDemoLink,
 }) => {
     return (
-        <div className="bg-gray-50 dark:bg-gradient-to-br dark:from-[#1E1E2E] dark:to-[#242436] rounded-lg p-3 flex flex-col justify-between border border-gray-200 dark:border-gray-800/50 hover:border-blue-900/50 transition-colors">
-            <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-blue-600 transition-all duration-300 pointer-events-none"></div>
+        <div className="bg-gray-800 rounded-lg p-5 flex flex-col justify-between ">
 
             <div className="relative z-10">
                 <h3 className="text-lg font-bold text-gray-100 mb-2">{title}</h3>
