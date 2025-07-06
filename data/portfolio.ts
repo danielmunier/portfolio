@@ -5,9 +5,8 @@ export const profile: Profile = {
   title: "Desenvolvedor Fullstack",
   tagline: "Fullstack Developer",
   about: [
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+    "Em busca em oportunidades no mercado de desenvolvimento ou afins para contribuir com soluções escaláveis e de alta qualidade utilizando as tecnologias que o mercado precisa.",
+
   ],
   contact: {
     email: "idanielmunier@email.com",
@@ -31,7 +30,7 @@ export const technologies: Technology[] = [
   {
     name: "Next.js",
     icon: "▲",
-    description: "React Framework",
+    description: "Framework",
     level: "Avançado",
     category: "frontend"
   },
@@ -57,6 +56,13 @@ export const technologies: Technology[] = [
     category: "frontend"
   },
   {
+    name: "Python",
+    icon: "🐍",
+    description: "Programming Language",
+    level: "Avançado",
+    category: "backend"
+  },
+  {
     name: "Prisma",
     icon: "🗄️",
     description: "Database ORM",
@@ -80,13 +86,13 @@ export const projects: Project[] = [
   },
   {
     id: "portfolio",
-    name: "Portfolio Website",
+    name: "Portfolio",
     description: "Meu portfólio pessoal construído com Next.js e TypeScript.",
     status: "em desenvolvimento",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     featured: true,
-    stats: { stars: 89, forks: 12 },
-    year: "2024",
+    stats: { stars: 0, forks: 0 },
+    year: "2025",
     url: "https://danielmunier.com.br",
     githubUrl: "https://github.com/danielmunier/portfolio"
   },

@@ -20,7 +20,7 @@ export function HamburgerMenu({ children }: HamburgerMenuProps) {
         variant="outline"
         size="sm"
         onClick={toggleMenu}
-        className="border-gray-800 text-gray-400 hover:bg-gray-900 bg-transparent text-xs h-7 px-2"
+        className="border-gray-800 text-gray-400bg-transparent text-xs h-7 px-2"
       >
         {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
       </Button>

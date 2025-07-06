@@ -79,7 +79,7 @@ export function Contact({ contact }: ContactProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-gray-500 hover:text-white h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="text-gray-500 h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
                   asChild
                 >
                   <a href={item.href} target="_blank" rel="noopener noreferrer">

@@ -65,7 +65,7 @@ export function Projects({ projects }: ProjectsProps) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-gray-500 hover:text-white h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="text-gray-500 h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity "
                 asChild
               >
                 <a href={project.url || project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -77,7 +77,6 @@ export function Projects({ projects }: ProjectsProps) {
         ))}
       </div>
 
-      {/* Other Projects List */}
       <div className="space-y-2">
         {otherProjects.map((project) => (
           <div
@@ -106,7 +105,7 @@ export function Projects({ projects }: ProjectsProps) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-gray-500 hover:text-blue-300 h-7 w-7 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="text-gray-500 h-7 w-7 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
                 asChild
               >
                 <a href={project.url || project.githubUrl} target="_blank" rel="noopener noreferrer">

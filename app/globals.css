@@ -236,3 +236,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+a, 
+[role="link"], 
+::selection, 
+* {
+  cursor: default !important;
+}
