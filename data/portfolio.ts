@@ -5,7 +5,7 @@ export const profile: Profile = {
   title: "Desenvolvedor Fullstack",
   tagline: "Fullstack Developer",
   about: [
-    "Em busca em oportunidades no mercado de desenvolvimento ou afins para contribuir com soluções escaláveis e de alta qualidade utilizando as tecnologias que o mercado precisa.",
+    "Crio soluções inovadoras para empresas e negócios que buscam escalabilidade, performance e experiência do usuário.",
 
   ],
   contact: {

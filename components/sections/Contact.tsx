@@ -1,12 +1,14 @@
 import { Contact as ContactType } from "@/types"
 import { Mail, Phone, MessageCircle, Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ContactForm } from "@/components/sections/ContactForm"
 
 interface ContactProps {
   contact: ContactType
 }
 
 export function Contact({ contact }: ContactProps) {
+
   const contactItems = [
     {
       icon: Mail,
@@ -57,7 +59,7 @@ export function Contact({ contact }: ContactProps) {
     <section>
       <h2 className="text-geist-lg font-medium mb-6 text-white">Contato</h2>
 
-      <div className="space-y-4">
+      <div className="space-y-4 mb-6">
         <p className="text-geist-sm text-gray-400 leading-relaxed mb-6">
           Entre em contato comigo através de qualquer um dos canais abaixo. Estou sempre disponível para conversar sobre projetos e oportunidades.
         </p>
@@ -91,12 +93,9 @@ export function Contact({ contact }: ContactProps) {
           ))}
         </div>
 
-        <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-          <p className="text-geist-sm text-blue-300 text-center">
-            💡 Prefere uma conversa rápida? Me envie uma mensagem no WhatsApp!
-          </p>
-        </div>
       </div>
+
+            <ContactForm />
     </section>
   )
 } 

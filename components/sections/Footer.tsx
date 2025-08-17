@@ -12,7 +12,7 @@ export function Footer({ profile }: FooterProps) {
       <div className="w-10 h-10 bg-gray-900/50 rounded-full flex items-center justify-center mx-auto mb-3 border border-gray-800/50">
         <span className="text-lg">💻</span>
       </div>
-      <p className="text-geist-sm text-gray-400">Que bom que você passou por aqui. Até!</p>
+      <p className="text-geist-sm text-gray-400">Fico feliz em ter você por aqui! Não hesite em entrar em contato.</p>
       <p className="text-geist-sm text-gray-600 mt-2">© {currentYear} {profile.name}</p>
     </footer>
   )

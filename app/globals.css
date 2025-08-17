@@ -237,9 +237,4 @@
   }
 }
 
-a, 
-[role="link"], 
-::selection, 
-* {
-  cursor: default !important;
-}
+/* Removed problematic cursor override */

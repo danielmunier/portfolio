@@ -22,7 +22,7 @@ export function PortfolioLayout({
   experiences 
 }: PortfolioLayoutProps) {
   return (
-    <div className="min-h-screen bg-custom-dark text-gray-300 p-4">
+    <div className="min-h-screen bg-custom-dark text-gray-300 p-3">
       <Hero profile={profile} />
       
       <main className="max-w-2xl mx-auto px-6 space-y-16">

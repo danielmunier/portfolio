@@ -17,12 +17,12 @@ export function HamburgerMenu({ children }: HamburgerMenuProps) {
   return (
     <>
       <Button
-        variant="outline"
+        variant="ghost"
         size="sm"
         onClick={toggleMenu}
-        className="border-gray-800 text-gray-400bg-transparent text-xs h-7 px-2"
+        className="border border-gray-800 dark:border-gray-600 bg-gray-900/50 dark:bg-gray-800/50 text-gray-400 dark:text-gray-300 text-xs h-7 px-2 hover:text-white hover:bg-gray-900/50 dark:hover:bg-gray-800/50"
       >
-        {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+        {isOpen ? <X className="w-4 h-4 cursor-pointer hover:text-white dark:hover:text-white" /> : <Menu className="w-4 h-4 cursor-pointer hover:text-white dark:hover:text-white" />}
       </Button>
 
       <Modal
