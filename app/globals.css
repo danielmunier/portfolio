@@ -119,6 +119,11 @@
 /* Custom background color */
 .bg-custom-dark {
   background-color: rgb(18, 17, 19);
+  background-image: url('https://www.patterns.dev/img/react-js/react-composition-vs-inheritance.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 }
 
 @theme inline {
