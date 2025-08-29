@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button"
 import { HamburgerMenu } from "@/components/ui/hamburger-menu"
 import { Profile } from "@/types"
-import { Mail, Phone, MessageCircle, Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react"
+import { Mail, MessageCircle, Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react"
 
 interface HeroProps {
   profile: Profile

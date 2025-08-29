@@ -1,5 +1,5 @@
 import { Contact as ContactType } from "@/types"
-import { Mail, Phone, MessageCircle, Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react"
+import { Mail, MessageCircle, Github, Linkedin, Twitter, Instagram, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ContactForm } from "@/components/sections/ContactForm"
 

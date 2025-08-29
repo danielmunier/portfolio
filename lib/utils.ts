@@ -29,7 +29,9 @@ export function formatDate(date: string | Date): string {
 }
 
 export function truncateText(text: string, maxLength: number): string {
-  if (text.length <= maxLength) return text
+  if (text.length <= maxLength) {
+    return text
+  }
   return text.slice(0, maxLength) + '...'
 }
 
@@ -37,12 +39,12 @@ export function generateId(): string {
   return Math.random().toString(36).substr(2, 9)
 }
 
-export function debounce<T extends (...args: any[]) => any>(
-  func: T,
+export function debounce<A extends unknown[], R>(
+  func: (...args: A) => R,
   wait: number
-): (...args: Parameters<T>) => void {
+): (...args: A) => void {
   let timeout: NodeJS.Timeout
-  return (...args: Parameters<T>) => {
+  return (...args: A) => {
     clearTimeout(timeout)
     timeout = setTimeout(() => func(...args), wait)
   }
