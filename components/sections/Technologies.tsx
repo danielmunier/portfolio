@@ -75,11 +75,11 @@ export function Technologies({ technologies }: TechnologiesProps) {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-4xl">
           {displayTechnologies.map((tech) => (
             <div key={tech.name} className="group relative">
-              <div className="flex flex-col items-center p-3 rounded-lg bg-gray-900/30 border border-gray-800 hover:bg-gray-800/50 transition-all duration-300 cursor-pointer">
+              <div className="flex flex-col items-center justify-center p-3 rounded-lg bg-gray-900/30 border border-gray-800 hover:bg-gray-800/50 transition-all duration-300 cursor-pointer h-20 w-full">
                 <div className="text-lg font-mono text-blue-400 group-hover:text-blue-300 transition-colors mb-1">
                   {tech.icon}
                 </div>
-                <div className="text-geist-xs text-gray-300 group-hover:text-white transition-colors font-medium text-center">
+                <div className="text-xs text-gray-300 group-hover:text-white transition-colors font-medium text-center leading-tight">
                   {tech.name}
                 </div>
                 <div className="text-xs text-gray-500 mt-1">{tech.level}</div>
