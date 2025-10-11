@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: "Daniel Munier",
+  name: "Daniel M. Munier",
   title: "Desenvolvedor Fullstack",
-  description: "Desenvolvedor Fullstack apaixonado por construir apps escaláveis, performáticos e com código limpo.",
+  description: "Desenvolvedor com busca em oportunidades no mercado de desenvolvimento para contribuir com soluções escaláveis e de alta qualidade.",
   url: "https://danielmunier.com.br",
   ogImage: "https://danielmunier.com/og.jpg",
   links: {
     github: "https://github.com/danielmunier",
     linkedin: "https://linkedin.com/in/daniel-munier",
     twitter: "https://twitter.com/",
-    email: "idanielmumnier@email.com",
+    email: "idanielmunier@gmail.com",
   },
   keywords: [
     "desenvolvedor",
@@ -17,17 +17,26 @@ export const siteConfig = {
     "next.js",
     "typescript",
     "node.js",
+    "python",
+    "tailwind css",
+    "nestjs",
+    "prisma",
+    "postgresql",
+    "docker",
+    "ci/cd",
     "portfólio",
     "frontend",
     "backend",
-    "web development"
+    "web development",
+    "são gonçalo",
+    "rio de janeiro"
   ],
   experience: {
-    years: 3,
-    focus: "performance e escalabilidade"
+    years: 2,
+    focus: "soluções escaláveis e de alta qualidade"
   },
   location: {
-    city: "Rio de Janeiro",
+    city: "São Gonçalo",
     state: "RJ",
     country: "Brasil",
     timezone: "GMT-3",

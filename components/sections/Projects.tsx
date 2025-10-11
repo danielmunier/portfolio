@@ -1,19 +1,21 @@
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Project } from "@/types"
-import { ExternalLink, Github, Calendar, Star } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Project } from "@/types";
+import { ExternalLink, Github, Calendar, Star } from "lucide-react";
 
 interface ProjectsProps {
-  projects: Project[]
+  projects: Project[];
 }
 
 export function Projects({ projects }: ProjectsProps) {
-  const featuredProjects = projects.filter((p) => p.featured)
-  const otherProjects = projects.filter((p) => !p.featured)
+  const featuredProjects = projects.filter((p) => p.featured);
+  const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <section>
-      <h2 className="text-geist-lg font-medium mb-6 text-white">Meus Projetos</h2>
+    <section id="projects">
+      <h2 className="text-geist-lg font-medium mb-6 text-white">
+        Meus Projetos
+      </h2>
 
       {/* Featured Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -28,15 +30,19 @@ export function Projects({ projects }: ProjectsProps) {
                   <h3 className="text-geist-base font-medium text-white group-hover:text-blue-300 transition-colors">
                     {project.name}
                   </h3>
-                  {
-                    project.status === "novo" ? (
-                      <Badge className="bg-green-600 text-white text-xs px-1.5 py-0.5">{project.status}</Badge>
-                    ) : (
-                      <Badge className="bg-blue-600 text-white text-xs px-1.5 py-0.5">{project.status}</Badge>
-                    )
-                  }
+                  {project.status === "novo" ? (
+                    <Badge className="bg-green-600 text-white text-xs px-1.5 py-0.5">
+                      {project.status}
+                    </Badge>
+                  ) : (
+                    <Badge className="bg-blue-600 text-white text-xs px-1.5 py-0.5">
+                      {project.status}
+                    </Badge>
+                  )}
                 </div>
-                <p className="text-geist-sm text-gray-400 leading-relaxed mb-3">{project.description}</p>
+                <p className="text-geist-sm text-gray-400 leading-relaxed mb-3">
+                  {project.description}
+                </p>
 
                 {/* Project Stats */}
                 <div className="flex items-center gap-4 mb-3 text-xs text-gray-500">
@@ -56,7 +62,11 @@ export function Projects({ projects }: ProjectsProps) {
 
                 <div className="flex gap-1 flex-wrap">
                   {project.tech.map((tech) => (
-                    <Badge key={tech} variant="outline" className="text-xs border-gray-700 text-gray-500">
+                    <Badge
+                      key={tech}
+                      variant="outline"
+                      className="text-xs border-gray-700 text-gray-500"
+                    >
                       {tech}
                     </Badge>
                   ))}
@@ -68,7 +78,11 @@ export function Projects({ projects }: ProjectsProps) {
                 className="text-gray-500 h-8 w-8 p-0 opacity-0 group-hover:opacity-100 transition-opacity "
                 asChild
               >
-                <a href={project.url || project.githubUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.url || project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
@@ -90,7 +104,9 @@ export function Projects({ projects }: ProjectsProps) {
                     {project.name}
                   </h3>
                   {project.status && (
-                    <Badge className="bg-blue-600 text-white text-xs px-1.5 py-0.5">{project.status}</Badge>
+                    <Badge className="bg-blue-600 text-white text-xs px-1.5 py-0.5">
+                      {project.status}
+                    </Badge>
                   )}
                   <div className="flex items-center gap-3 text-xs text-gray-500">
                     <div className="flex items-center gap-1">
@@ -100,7 +116,9 @@ export function Projects({ projects }: ProjectsProps) {
                     <span>{project.year}</span>
                   </div>
                 </div>
-                <p className="text-geist-sm text-gray-500 mt-1">{project.description}</p>
+                <p className="text-geist-sm text-gray-500 mt-1">
+                  {project.description}
+                </p>
               </div>
               <Button
                 variant="ghost"
@@ -108,7 +126,11 @@ export function Projects({ projects }: ProjectsProps) {
                 className="text-gray-500 h-7 w-7 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
                 asChild
               >
-                <a href={project.url || project.githubUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.url || project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </Button>
@@ -117,5 +139,5 @@ export function Projects({ projects }: ProjectsProps) {
         ))}
       </div>
     </section>
-  )
-} 
+  );
+}
