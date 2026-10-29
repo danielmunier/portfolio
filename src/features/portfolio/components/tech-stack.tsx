@@ -7,7 +7,7 @@ const ID = "stack"
 
 export function TechStack() {
   return (
-    <Panel id={ID}>
+    <Panel id={ID} className="group/stack">
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Stack</a>
@@ -49,12 +49,20 @@ export function TechStack() {
                 >
                   {items.map((item) => {
                     return (
-                      <li key={item.key} className="flex">
+                      <li
+                        key={item.key}
+                        className="flex"
+                        style={
+                          item.color
+                            ? ({ "--brand": item.color } as React.CSSProperties)
+                            : undefined
+                        }
+                      >
                         <a
                           href={item.href}
                           target="_blank"
                           rel="noopener"
-                          className="flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full bg-zinc-50/80 px-2 font-mono text-xs text-foreground inset-ring-1 inset-ring-border dark:bg-zinc-900/80 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground/80"
+                          className="flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full bg-zinc-50/80 px-2 font-mono text-xs text-foreground inset-ring-1 inset-ring-border dark:bg-zinc-900/80 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground/80 [&_svg]:transition-[color] [&_svg]:duration-300 group-hover/stack:[&_svg]:text-(--brand,var(--foreground))"
                         >
                           {item.icon}
                           {item.title}

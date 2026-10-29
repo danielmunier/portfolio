@@ -17,7 +17,7 @@ export function Projects() {
     <Panel id={ID}>
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Projects</a>
+          <a href={`#${ID}`}>Projetos</a>
           <PanelTitleSup>({PROJECTS.length})</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>

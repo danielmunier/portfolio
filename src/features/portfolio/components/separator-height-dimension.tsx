@@ -7,10 +7,10 @@ import {
 } from "@/components/dimension"
 
 function SeparatorHeightDimension({
-  height,
+  label,
   className,
 }: {
-  height: number
+  label: React.ReactNode
   className?: string
 }) {
   return (
@@ -27,8 +27,8 @@ function SeparatorHeightDimension({
         orientation="vertical"
         className="absolute -inset-y-px -right-6 translate-x-1/2"
       />
-      <DimensionValue className="absolute top-1/2 left-full ml-8 -translate-y-1/2">
-        {height}
+      <DimensionValue className="absolute top-1/2 left-full ml-8 -translate-y-1/2 whitespace-nowrap">
+        {label}
       </DimensionValue>
     </Dimension>
   )

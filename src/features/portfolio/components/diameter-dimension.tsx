@@ -7,10 +7,10 @@ import {
 
 /** Expects the circle to fill its positioned parent. */
 function DiameterDimension({
-  diameter,
+  label,
   className,
 }: {
-  diameter: number
+  label: React.ReactNode
   className?: string
 }) {
   return (
@@ -27,7 +27,7 @@ function DiameterDimension({
         orientation="vertical"
         className="absolute inset-y-0 -left-6 -translate-x-1/2"
       >
-        Ø{diameter}
+        {label}
       </DimensionLine>
     </Dimension>
   )

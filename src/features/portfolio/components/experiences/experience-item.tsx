@@ -12,16 +12,17 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
       id={`experience-${experience.id}`}
       className="group/experience screen-line-bottom scroll-mt-14 space-y-4 py-4"
     >
-      <div className="flex items-start gap-3 sm:items-center">
-        <div className="flex size-6 shrink-0 items-center justify-center select-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground [&_svg:not([class*='size-'])]:size-5">
+      <div className="flex items-start gap-2 sm:items-center">
+        {/* 32px box pulled left 4px so it stays centered on the 24px timeline column. */}
+        <div className="-ml-1 flex size-8 shrink-0 items-center justify-center select-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground [&_svg:not([class*='size-'])]:size-5">
           {experience.companyLogo ? (
             <Image
               src={experience.companyLogo}
               alt={`${experience.companyName} logo`}
-              width={24}
-              height={24}
+              width={32}
+              height={32}
               quality={100}
-              className="rounded-full grayscale transition-[filter] duration-300 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover/experience:grayscale-0"
+              className="size-8 object-contain grayscale transition-[filter] duration-300 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover/experience:grayscale-0"
               unoptimized
               aria-hidden
             />
@@ -50,10 +51,10 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 
           {experience.location && experience.locationType && (
             <dl className="flex min-w-0 items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground">
-              <dt className="sr-only">Location</dt>
+              <dt className="sr-only">Local</dt>
               <dd className="truncate">{experience.location}</dd>
 
-              <dt className="sr-only">Location type</dt>
+              <dt className="sr-only">Modelo de trabalho</dt>
               <dd>({experience.locationType})</dd>
 
               {experience.isCurrentEmployer && (

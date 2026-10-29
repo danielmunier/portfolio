@@ -1,13 +1,12 @@
 "use client"
 
 import { useId } from "react"
-import { copyToClipboardWithEvent } from "@/utils/copy"
+import { copyText } from "@/utils/copy"
 import { decodeEmail } from "@/utils/string"
 import { useTiks } from "@rexa-developer/tiks/react"
 import { MailIcon } from "lucide-react"
 import { useHotkeys } from "react-hotkeys-hook"
 
-import { trackEvent } from "@/lib/events"
 import { useIsClient } from "@/hooks/use-is-client"
 import { toast } from "@/components/ui/toast"
 import { CopyButton } from "@/components/copy-button"
@@ -32,15 +31,9 @@ export function EmailItem({ emailB64 }: EmailItemProps) {
   const { success } = useTiks()
 
   useHotkeys("shift+e", () => {
-    copyToClipboardWithEvent(emailDecoded, {
-      name: "copy_email",
-      properties: {
-        method: "keyboard",
-        key: "shift+e",
-      },
-    })
+    copyText(emailDecoded)
     success()
-    toast.add({ type: "success", title: "Email copied" })
+    toast.add({ type: "success", title: "E-mail copiado" })
   })
 
   return (
@@ -65,14 +58,6 @@ export function EmailItem({ emailB64 }: EmailItemProps) {
           variant="ghost"
           size="icon-xs"
           text={() => emailDecoded}
-          onCopySuccess={() => {
-            trackEvent({
-              name: "copy_email",
-              properties: {
-                method: "button",
-              },
-            })
-          }}
         />
       </div>
 

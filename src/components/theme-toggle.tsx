@@ -4,7 +4,6 @@ import { useTheme } from "next-themes"
 import { useHotkeys } from "react-hotkeys-hook"
 
 import { META_THEME_COLORS } from "@/config/site"
-import { useClickSound } from "@/hooks/soundcn/use-click-sound"
 import { useMetaColor } from "@/hooks/use-meta-color"
 import {
   Tooltip,
@@ -22,12 +21,9 @@ export function ThemeToggle() {
 
   const { setMetaColor } = useMetaColor()
 
-  const [click] = useClickSound()
-
   const switchTheme = () => {
     const next = resolvedTheme === "dark" ? "light" : "dark"
 
-    click()
     setTheme(next === systemTheme ? "system" : next)
     setMetaColor(
       resolvedTheme === "dark"
@@ -46,7 +42,7 @@ export function ThemeToggle() {
             className="relative touch-manipulation border-none"
             variant="ghost"
             size="icon-sm"
-            aria-label="Toggle mode"
+            aria-label="Alternar tema claro e escuro"
             onClick={() => switchTheme()}
           >
             <span
@@ -64,7 +60,7 @@ export function ThemeToggle() {
       />
       <TooltipContent className="pr-2 pl-3">
         <div className="flex items-center gap-3">
-          Toggle mode
+          Alternar tema
           <Kbd>D</Kbd>
         </div>
       </TooltipContent>

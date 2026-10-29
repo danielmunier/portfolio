@@ -1,30 +1,23 @@
 import type { Metadata } from "next"
 import type { ProfilePage, WithContext } from "schema-dts"
 
-import { CARBON_ADS } from "@/config/ads"
 import { JSON_LD_ID } from "@/config/json-ld"
 import { JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl, cn } from "@/lib/utils"
-import { FloatingCarbonAds } from "@/components/floating-carbon-ads"
-import { Blocks } from "@/features/portfolio/components/blocks"
-import { Blog } from "@/features/portfolio/components/blog"
-import { Components } from "@/features/portfolio/components/components"
+import { AnimatedTitle } from "@/components/animated-title"
+import { BouncingMark } from "@/features/portfolio/components/bouncing-mark"
 import { Education } from "@/features/portfolio/components/education"
 import { Experiences } from "@/features/portfolio/components/experiences"
 import { FrameWidthDimension } from "@/features/portfolio/components/frame-width-dimension"
 import { GitHubContributions } from "@/features/portfolio/components/github-contributions"
 import { Hello } from "@/features/portfolio/components/hello"
-import { Numbers } from "@/features/portfolio/components/numbers"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
 import { Projects } from "@/features/portfolio/components/projects"
 import { Recognition } from "@/features/portfolio/components/recognition"
 import { SeparatorHeightDimension } from "@/features/portfolio/components/separator-height-dimension"
 import { SocialLinks } from "@/features/portfolio/components/social-links"
-import { Sponsors } from "@/features/portfolio/components/sponsors"
-import { SponsorsCarousel } from "@/features/portfolio/components/sponsors-carousel"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
-import { Testimonials } from "@/features/portfolio/components/testimonials"
 import { USER } from "@/features/portfolio/data/user"
 
 export const metadata: Metadata = {
@@ -37,15 +30,22 @@ export default function HomePage() {
   return (
     <>
       <JsonLdScript data={getProfilePageJsonLd()} />
-      {CARBON_ADS && <FloatingCarbonAds />}
+      <AnimatedTitle title={USER.displayName} />
 
       <div className="[--separator-height:--spacing(8)] **:data-[slot=panel]:scroll-mt-[calc(var(--header-height)+var(--separator-height))]">
         <div className="mx-auto md:max-w-3xl">
-          <FrameWidthDimension />
-          <ProfileHeader />
+          {/* The mark bounces over both rows, up to the line under the site header. */}
+          <div className="relative">
+            <FrameWidthDimension />
+            <ProfileHeader />
+            <BouncingMark />
+          </div>
           <Separator>
             {/* Mirrors the avatar's diameter, so same breakpoint. */}
-            <SeparatorHeightDimension className="hidden lg:block" height={32} />
+            <SeparatorHeightDimension
+              className="hidden lg:block"
+              label="4h de sono"
+            />
           </Separator>
 
           <Overview />
@@ -54,18 +54,6 @@ export default function HomePage() {
           <Separator />
 
           <Hello />
-          <SponsorsCarousel />
-          <Numbers />
-          <Testimonials />
-          <Separator />
-
-          <Components />
-          <Separator />
-
-          <Blocks />
-          <Separator />
-
-          <Blog />
           <Separator />
 
           <TechStack />
@@ -81,9 +69,6 @@ export default function HomePage() {
           <Separator />
 
           <Recognition />
-          <Separator />
-
-          <Sponsors />
         </div>
       </div>
     </>
@@ -107,7 +92,7 @@ function Separator({ className, children }: React.ComponentProps<"div">) {
   return (
     <div
       className={cn(
-        "stripe-divider h-(--separator-height) w-full border-x border-x-line",
+        "relative h-(--separator-height) w-full border-x border-x-line",
         className
       )}
     >

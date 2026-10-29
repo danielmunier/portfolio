@@ -1,11 +1,8 @@
 "use client"
 
-import { useRef } from "react"
 import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
-import { ChanhDaiMark } from "@/components/chanhdai-mark"
-import { Magnet } from "@/components/react-bits/magnet"
 import { DotGridSpotlight } from "@/registry/components/dot-grid-spotlight"
 
 const DOT_COLOR = {
@@ -19,19 +16,14 @@ const DOT_COLOR = {
   },
 }
 
-/** @deprecated */
 export function ProfileCover() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
   const { resolvedTheme } = useTheme()
   const theme = resolvedTheme === "dark" ? "dark" : "light"
 
   return (
     <div
-      ref={containerRef}
       className={cn(
-        "relative flex aspect-2.5/1 items-center justify-center border-x border-line select-none sm:aspect-3.5/1",
-        "screen-line-top screen-line-bottom before:-top-px after:-bottom-px",
+        "relative flex aspect-2.5/1 items-center justify-center select-none sm:aspect-auto sm:h-full sm:min-h-40",
         "bg-black/0.75 dark:bg-white/1"
       )}
     >
@@ -39,14 +31,6 @@ export function ProfileCover() {
         dotColor={DOT_COLOR[theme]?.default}
         activeDotColor={DOT_COLOR[theme]?.active}
       />
-
-      <Magnet
-        containerRef={containerRef}
-        magnetStrength={6}
-        wrapperClassName="pointer-events-none"
-      >
-        <ChanhDaiMark className="h-12 w-24 min-[25rem]:h-14 min-[25rem]:w-28 sm:h-16 sm:w-32" />
-      </Magnet>
     </div>
   )
 }

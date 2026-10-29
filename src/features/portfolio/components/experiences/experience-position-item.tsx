@@ -77,7 +77,7 @@ export function ExperiencePositionItem({
               {isOngoing ? (
                 <InfinityIcon
                   className="size-4.5 translate-y-[0.5px]"
-                  aria-label="Present"
+                  aria-label="Atual"
                   strokeWidth={1.5}
                 />
               ) : (
@@ -133,7 +133,7 @@ function formatDuration(start: string, end?: string): string {
     if (years <= 0) {
       return ""
     }
-    return `${years}y`
+    return `${years}a`
   }
 
   const startDate = parsePeriodDate(start, "first")
@@ -152,9 +152,9 @@ function formatDuration(start: string, end?: string): string {
   const years = Math.floor(totalMonths / 12)
   const months = totalMonths % 12
   if (months === 0) {
-    return `${years}y`
+    return `${years}a`
   }
-  return `${years}y ${months}m`
+  return `${years}a ${months}m`
 }
 
 function parsePeriodDate(str: string, fallbackMonth: "first" | "last"): Date {

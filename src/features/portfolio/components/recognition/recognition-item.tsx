@@ -27,10 +27,11 @@ import {
 import {
   AccentureIcon,
   AnimationsDevIcon,
+  AnthropicIcon,
   CourseraIcon,
+  FreeCodeCampIcon,
   GoogleIcon,
   MetaIcon,
-  MicrosoftIcon,
   VercelIcon,
 } from "@/components/icons"
 import { Markdown } from "@/components/markdown"
@@ -42,10 +43,10 @@ import type {
 } from "@/features/portfolio/types/recognition"
 
 const KIND_LABELS: Record<RecognitionKind, string> = {
-  award: "Award",
-  certificate: "Certificate",
-  trademark: "Trademark",
-  copyright: "Copyright",
+  award: "Prêmio",
+  certificate: "Certificado",
+  trademark: "Marca",
+  copyright: "Direito autoral",
 }
 
 // Closed map keyed by `issuerIconName`, so the bundle only keeps icons that can
@@ -53,13 +54,51 @@ const KIND_LABELS: Record<RecognitionKind, string> = {
 const ISSUER_ICONS: Record<string, React.ReactNode> = {
   accenture: <AccentureIcon />,
   animationsdev: <AnimationsDevIcon />,
+  anthropic: <AnthropicIcon />,
   copyright: <HugeiconsIcon icon={CopyrightIcon} />,
   coursera: <CourseraIcon />,
+  freecodecamp: <FreeCodeCampIcon />,
   google: <GoogleIcon />,
   meta: <MetaIcon />,
-  microsoft: <MicrosoftIcon />,
+  microsoft: <MicrosoftColorIcon />,
   trademark: <HugeiconsIcon icon={Stamp01Icon} />,
   vercel: <VercelIcon />,
+}
+
+// Brand color revealed while the section is hovered; issuers without one
+// (near-black brands) just brighten to the foreground.
+const ISSUER_COLORS: Record<string, string> = {
+  anthropic: "#D97757",
+  google: "#4285F4",
+  meta: "#0866FF",
+  vercel: "var(--foreground)",
+}
+
+const FALLBACK_COLOR = "#10B981"
+
+function MicrosoftColorIcon() {
+  const squares = [
+    { x: 2, y: 2, color: "#F25022" },
+    { x: 12.495, y: 2, color: "#7FBA00" },
+    { x: 2, y: 12.495, color: "#00A4EF" },
+    { x: 12.495, y: 12.495, color: "#FFB900" },
+  ]
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden>
+      {squares.map((square) => (
+        <rect
+          key={square.color}
+          x={square.x}
+          y={square.y}
+          width="9.505"
+          height="9.505"
+          className="fill-current transition-[fill] duration-300 group-hover/recognition:fill-(--square)"
+          style={{ "--square": square.color } as React.CSSProperties}
+        />
+      ))}
+    </svg>
+  )
 }
 
 export function RecognitionItem({ entry }: { entry: RecognitionEntry }) {
@@ -160,7 +199,16 @@ function CredentialRow({ entry }: { entry: CredentialRecognition }) {
 
   return (
     <div className="relative flex items-center pr-4 hover:bg-accent-muted">
-      <IconTile className="mx-4">
+      <IconTile
+        className="mx-4 transition-[color] duration-300 group-hover/recognition:text-(--brand,var(--foreground))"
+        style={
+          {
+            "--brand": credential.issuerIconName
+              ? ISSUER_COLORS[credential.issuerIconName]
+              : FALLBACK_COLOR,
+          } as React.CSSProperties
+        }
+      >
         {(credential.issuerIconName
           ? ISSUER_ICONS[credential.issuerIconName]
           : null) ?? <CircleCheckBigIcon />}
@@ -168,30 +216,39 @@ function CredentialRow({ entry }: { entry: CredentialRecognition }) {
 
       <div className="flex-1 space-y-1 border-l border-dashed border-line p-4">
         <h3 className="leading-snug font-medium text-balance">
-          <a href={credential.credentialURL} target="_blank" rel="noopener">
-            <span className="absolute inset-0" aria-hidden />
-            {credential.title}
-          </a>
+          {credential.credentialURL ? (
+            <a href={credential.credentialURL} target="_blank" rel="noopener">
+              <span className="absolute inset-0" aria-hidden />
+              {credential.title}
+            </a>
+          ) : (
+            credential.title
+          )}
         </h3>
 
         <dl className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
           <KindTerm kind={kind} />
 
           <div>
-            <dt className="sr-only">Issued by</dt>
+            <dt className="sr-only">Emitido por</dt>
             <dd>
               <span aria-hidden>@</span>
               <span className="ml-0.5">{credential.issuer}</span>
             </dd>
           </div>
 
-          <MetaSeparator />
-
-          <DateTerm label="Issued on" date={date} />
+          {date && (
+            <>
+              <MetaSeparator />
+              <DateTerm label="Emitido em" date={date} />
+            </>
+          )}
         </dl>
       </div>
 
-      <ArrowUpRightIcon className="size-4 text-muted-foreground" />
+      {credential.credentialURL && (
+        <ArrowUpRightIcon className="size-4 text-muted-foreground" />
+      )}
     </div>
   )
 }

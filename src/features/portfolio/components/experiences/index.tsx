@@ -25,7 +25,7 @@ export function Experiences() {
     <Panel id={ID}>
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Experience</a>
+          <a href={`#${ID}`}>Experiência</a>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>

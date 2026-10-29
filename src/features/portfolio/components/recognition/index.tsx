@@ -14,10 +14,10 @@ const ID = "recognition"
 
 export function Recognition() {
   return (
-    <Panel id={ID}>
+    <Panel id={ID} className="group/recognition">
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Recognition</a>
+          <a href={`#${ID}`}>Certificações</a>
           <PanelTitleSup>({RECOGNITION.length})</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>

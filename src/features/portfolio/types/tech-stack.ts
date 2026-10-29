@@ -3,5 +3,7 @@ export type TechStack = {
   title: string
   href: string
   icon: React.ReactElement
+  /** Brand color shown on hover; omit for black/near-black brands. */
+  color?: string
   categories: string[]
 }

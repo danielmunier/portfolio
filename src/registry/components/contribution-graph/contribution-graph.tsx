@@ -51,26 +51,26 @@ type MonthLabel = {
 
 const DEFAULT_MONTH_LABELS = [
   "Jan",
-  "Feb",
+  "Fev",
   "Mar",
-  "Apr",
-  "May",
+  "Abr",
+  "Mai",
   "Jun",
   "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
+  "Ago",
+  "Set",
+  "Out",
   "Nov",
-  "Dec",
+  "Dez",
 ]
 
 const DEFAULT_LABELS: Labels = {
   months: DEFAULT_MONTH_LABELS,
-  weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-  totalCount: "{{count}} activities in {{year}}",
+  weekdays: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+  totalCount: "{{count}} atividades em {{year}}",
   legend: {
-    less: "Less",
-    more: "More",
+    less: "Menos",
+    more: "Mais",
   },
 }
 

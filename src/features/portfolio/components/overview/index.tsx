@@ -12,12 +12,11 @@ import {
   IntroItemLink,
 } from "./intro-item"
 import { JobItem } from "./job-item"
-import { PhoneItem } from "./phone-item"
 
 export function Overview() {
   return (
     <Panel>
-      <h2 className="sr-only">Overview</h2>
+      <h2 className="sr-only">Resumo</h2>
 
       <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
         {USER.jobs.map((job, index) => {
@@ -39,7 +38,7 @@ export function Overview() {
           <IntroItemContent>
             <IntroItemLink
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(USER.address)}`}
-              aria-label={`Location: ${USER.address}`}
+              aria-label={`Localização: ${USER.address}`}
             >
               {USER.address}
             </IntroItemLink>
@@ -49,8 +48,6 @@ export function Overview() {
         <CurrentLocalTimeItem timeZone={USER.timeZone} />
 
         <EmailItem emailB64={USER.emailB64} />
-
-        <PhoneItem phoneNumberB64={USER.phoneNumberB64} />
 
         {/* <IntroItem>
           <IntroItemIcon>
@@ -73,8 +70,6 @@ export function Overview() {
           </IntroItemContent>
         </IntroItem> */}
       </PanelContent>
-
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 -z-1 w-px -translate-x-2.25 border-r border-dashed border-line max-sm:hidden" />
     </Panel>
   )
 }

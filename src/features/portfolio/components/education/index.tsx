@@ -16,7 +16,7 @@ export function Education() {
     <Panel id={ID}>
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Education</a>
+          <a href={`#${ID}`}>Formação</a>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>

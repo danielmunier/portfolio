@@ -1,6 +1,9 @@
 export type Education = {
   id: string
   school: string
+  /** Path under /public; `schoolLogoDark` swaps in on the dark theme. */
+  schoolLogo?: string
+  schoolLogoDark?: string
   degree?: string
   fieldOfStudy?: string
   period: {

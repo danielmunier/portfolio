@@ -1,158 +1,50 @@
-import { ChanhDaiMark } from "@/components/chanhdai-mark"
-import {
-  QuaricIcon,
-  ReactWheelPickerIcon,
-  ZaDarkIcon,
-} from "@/components/icons"
-
 import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
-    id: "react-wheel-picker",
-    title: "React Wheel Picker",
+    id: "mano-do-ceu",
+    title: "MANO do Céu",
     period: {
-      start: "05.2025",
+      start: "08.2026",
     },
-    link: "https://react-wheel-picker.chanhdai.com",
-    skills: [
-      "Open Source",
-      "React",
-      "TypeScript",
-      "Monorepo",
-      "Turborepo",
-      "pnpm-workspace",
-      "Package Publishing",
-      "NPM Registry",
-      "GitHub Actions",
-    ],
-    description: `iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. / Backed by [▲ Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
-- Natural touch scrolling with smooth inertia, mouse drag and scroll for desktop
-- Infinite loop scrolling
-- Unstyled core for complete style customization
-- Full keyboard navigation and type-ahead search
-`,
-    icon: <ReactWheelPickerIcon />,
+    link: "https://www.sampasky.com.br",
+    skills: ["Projeto AcesseFy", "Sampa Sky", "Agente de voz", "IoT"],
+    description: `Projeto da AcesseFy para o Sampa Sky, em São Paulo. O MANO fica na sala de reunião como um assistente de voz: anota os pedidos de quem está ali e manda para o restaurante, que serve na própria sala. Também controla a sala por IoT, como persianas, luz, TV e ar-condicionado.`,
+    icon: <img src="/images/projects/sampasky.png" alt="" />,
     isExpanded: true,
   },
   {
-    id: "chanhdaidotcom",
-    title: "chanhdai.com",
+    id: "seg-summit-2026",
+    title: "Seg Summit 2026",
     period: {
-      start: "01.2025",
+      start: "09.2026",
+      end: "10.2026",
     },
-    link: "https://github.com/ncdai/chanhdai.com",
+    link: "https://segsummit.com.br",
     skills: [
-      "Open Source",
-      "Next.js 16",
-      "Tailwind CSS v4",
-      "Radix UI",
-      "Base UI",
-      "Motion",
-      "shadcn/ui",
-      "shadcn registry",
-      "Vercel",
+      "Projeto AcesseFy",
+      "Evento",
+      "Totem com IA",
+      "Modelos abertos de vídeo",
+      "GPU na nuvem",
+      "Resend",
     ],
-    description: "A pixel-perfect dev portfolio and shadcn registry.",
-    icon: <ChanhDaiMark />,
+    description: `Evento no Distrito Anhembi, em São Paulo, em que a AcesseFy apresentou seus totens de atendimento com IA. Trabalhei no desenvolvimento dos produtos que levamos para o estande.
+- Brinde para os visitantes: a pessoa tira uma foto no totem e vira um personagem 3D no cenário da profissão dela.
+- O vídeo é animado com modelos abertos na GPU da nossa própria infraestrutura e entregue por e-mail usando Resend.`,
+    icon: <img src="/images/projects/segsummit.png" alt="" />,
   },
   {
-    id: "quaricdotcom",
-    title: "quaric.com",
+    id: "ia-sec-360",
+    title: "IA SEC 360",
     period: {
-      start: "03.2024",
-      end: "07.2025",
+      start: "08.2026",
+      end: "08.2026",
     },
-    link: "https://quaric.com",
-    skills: [
-      "Company Project",
-      "Next.js 15",
-      "Tailwind CSS v3",
-      "shadcn/ui",
-      "Strapi 5",
-      "VNPAY-QR",
-      "Docker",
-      "Docker Compose",
-      "NGINX",
-    ],
-    icon: <QuaricIcon />,
-  },
-  {
-    id: "zadark",
-    title: "ZaDark",
-    period: {
-      start: "01.2022",
-    },
-    link: "https://zadark.com",
-    skills: [
-      "Pet Project",
-      "Open Source",
-      "Browser Extension",
-      "CLI",
-      "Docusaurus 3",
-    ],
-    description: `ZaDark adds Dark Mode, anti-peeking, customizable fonts, backgrounds, and more to Zalo Web and PC.
-- Earned 10M+ VND in net sales from a paid Safari Extension*
-- 80k+ downloads on SourceForge* (awarded Community Leader badge by SourceForge)
-- 30k+ active users via Chrome Web Store*
-- Bronze Medal — 10th Design, Manufacturing, and Application Award 2022
-
-<p class="text-muted-foreground">* Peak metrics.</p>
-`,
-    icon: <ZaDarkIcon />,
-  },
-  {
-    id: "penphy",
-    title: "Penphy",
-    period: {
-      start: "01.2019",
-      end: "08.2019",
-    },
-    link: "https://www.youtube.com/watch?v=EdU7rUO-UA4",
-    skills: ["Startup Project", "JavaScript", "React Native"],
-    description: "2nd Prize — Business Startup Competition 2019",
-  },
-  {
-    id: "unlimitedstudy",
-    title: "UnlimitedStudy",
-    period: {
-      start: "01.2017",
-      end: "08.2018",
-    },
-    link: "https://muctim.tuoitre.vn/cong-cu-ho-tro-viec-day-va-hoc-55107.htm",
-    skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
-      "jQuery",
-      "Bootstrap 3",
-    ],
-    description: `UnlimitedStudy is a website that provides teaching and learning support tools for teachers and students.
-- 3rd Prize — National Science and Engineering Fair 2018 (ViSEF)
-- 3rd Prize — National Young Informatics Contest 2018
-- Reached 7k+ users, mainly high school students in Can Tho City
-- Pilot implemented in high schools across Can Tho City with English quizzes, supervised by English subject specialists from the Can Tho City Department of Education and Training`,
-  },
-  {
-    id: "study-english",
-    title: "Study English",
-    period: {
-      start: "11.2016",
-      end: "12.2017",
-    },
-    link: "https://www.youtube.com/watch?v=OYgugvjqU4A",
-    skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
-    ],
-    description: `Study English is a free, mobile-friendly website for high school English learning, offering vocabulary, quizzes, listening practice, and more.
-- Consolation Prize — National Youth and Children’s Creativity Contest 2016
-- 1st Prize — Can Tho City Youth and Children’s Creativity Contest 2016
-- Consolation Prize — Can Tho City Young Informatics Contest 2016`,
+    link: "https://iasec360.acessefy.com.br",
+    skills: ["Projeto AcesseFy", "Evento", "Avatar de voz", "WhatsApp"],
+    description: `Projeto da AcesseFy para o evento IA SEC 360, voltado a síndicos de condomínio.
+- Um avatar de voz apresentava o evento, coletava nome, telefone e empresa e enviava o convite pelo WhatsApp.`,
+    icon: <img src="/images/projects/iasec360.png" alt="" />,
   },
 ]

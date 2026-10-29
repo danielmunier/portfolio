@@ -2,12 +2,11 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
-import { GoogleTagManager } from "@next/third-parties/google"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 import type { WebSite, WithContext } from "schema-dts"
 
 import { JSON_LD_ID, personJsonLd } from "@/config/json-ld"
-import { META_THEME_COLORS, SITE_INFO, X_HANDLE } from "@/config/site"
+import { META_THEME_COLORS, SITE_INFO } from "@/config/site"
 import { fontVariables } from "@/lib/fonts"
 import { JsonLdScript } from "@/lib/json-ld"
 import { Providers } from "@/components/providers"
@@ -42,63 +41,59 @@ const darkModeScript = String.raw`
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_INFO.url),
   title: {
-    template: `%s – ${SITE_INFO.name}`,
-    default: `${USER.displayName} – ${USER.jobTitle}`,
+    template: `%s | ${SITE_INFO.name}`,
+    default: SITE_INFO.title,
   },
   description: SITE_INFO.description,
   keywords: SITE_INFO.keywords,
+  applicationName: SITE_INFO.name,
+  category: "technology",
   authors: [
     {
-      name: "ncdai",
+      name: USER.displayName,
       url: SITE_INFO.url,
     },
   ],
-  creator: "ncdai",
+  creator: USER.displayName,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // og:image and twitter:image come from app/opengraph-image.tsx.
   openGraph: {
     siteName: SITE_INFO.name,
+    title: SITE_INFO.title,
+    description: SITE_INFO.description,
     url: "/",
     type: "profile",
-    locale: "en_US",
+    locale: "pt_BR",
     firstName: USER.firstName,
     lastName: USER.lastName,
     username: USER.username,
     gender: USER.gender,
-    images: [
-      {
-        url: SITE_INFO.ogImage,
-        width: 1200,
-        height: 630,
-        alt: SITE_INFO.name,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    site: X_HANDLE,
-    creator: X_HANDLE,
-    images: [SITE_INFO.ogImage],
+    title: SITE_INFO.title,
+    description: SITE_INFO.description,
   },
   icons: {
     icon: [
       {
-        url: "https://assets.chanhdai.com/images/favicon.ico",
-        sizes: "32x32",
-      },
-      {
-        url: "https://assets.chanhdai.com/images/favicon.svg",
+        url: "/favicon.svg",
         sizes: "any",
         type: "image/svg+xml",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "https://assets.chanhdai.com/images/favicon-dark.svg",
-        sizes: "any",
-        type: "image/svg+xml",
-        media: "(prefers-color-scheme: dark)",
       },
     ],
     apple: {
-      url: "https://assets.chanhdai.com/images/apple-touch-icon.png",
+      url: "/apple-touch-icon.png",
       type: "image/png",
       sizes: "180x180",
     },
@@ -118,7 +113,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={fontVariables} suppressHydrationWarning>
+    <html lang="pt-BR" className={fontVariables} suppressHydrationWarning>
       <head>
         <script
           type="text/javascript"
@@ -153,10 +148,6 @@ export default function RootLayout({
         />
         <JsonLdScript data={getWebSiteJsonLd()} />
       </head>
-
-      {process.env.NEXT_PUBLIC_GTM_ID && (
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-      )}
 
       <body>
         <Providers>

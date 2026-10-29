@@ -6,7 +6,6 @@ import { ThemeProvider } from "next-themes"
 
 import { Toaster } from "@/components/ui/toast"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { KeyboardShortcuts } from "@/components/keyboard-shortcuts"
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -26,8 +25,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
           options={{ showSpinner: false }}
         >
           <TooltipProvider>{children}</TooltipProvider>
-
-          <KeyboardShortcuts />
         </ProgressProvider>
 
         <Toaster />

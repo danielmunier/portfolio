@@ -28,7 +28,7 @@ export function JobItem({
       <IntroItemIcon>{getJobIcon(title)}</IntroItemIcon>
 
       <IntroItemContent>
-        {title} <span aria-label="at">@</span>
+        {title} <span aria-label="na">@</span>
         <IntroItemLink
           className="ml-0.5 font-medium"
           {...(experienceId
@@ -49,7 +49,7 @@ export function JobItem({
 }
 
 function getJobIcon(title: string) {
-  if (/(developer|engineer)/i.test(title)) {
+  if (/(developer|engineer|desenvolvedor|engenheiro)/i.test(title)) {
     return <CodeXmlIcon />
   }
 

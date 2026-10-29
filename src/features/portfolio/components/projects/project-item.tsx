@@ -1,4 +1,4 @@
-import { addQueryParams } from "@/utils/url"
+import { addQueryParams, urlToName } from "@/utils/url"
 import { BoxIcon, InfinityIcon, LinkIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
@@ -7,6 +7,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { IconTile } from "@/components/ui/icon-tile"
+import { Separator } from "@/components/ui/separator"
 import { Tag } from "@/components/ui/tag"
 import {
   Tooltip,
@@ -37,7 +38,9 @@ export function ProjectItem({
       {/* Only the title is the trigger (accordion pattern); its overlay keeps
           the whole row clickable, while the project link sits above it. */}
       <div className="relative flex items-center hover:bg-accent-muted">
-        <IconTile className="mx-4">{project.icon ?? <BoxIcon />}</IconTile>
+        <IconTile className="mx-4 size-10 rounded-lg [&_img]:size-7 [&_img]:object-contain">
+          {project.icon ?? <BoxIcon />}
+        </IconTile>
 
         <div className="flex flex-1 items-center gap-2 border-l border-dashed border-line p-4">
           <div className="flex-1">
@@ -48,8 +51,8 @@ export function ProjectItem({
               </CollapsibleTrigger>
             </h3>
 
-            <dl className="text-sm text-muted-foreground">
-              <dt className="sr-only">Period</dt>
+            <dl className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
+              <dt className="sr-only">Período</dt>
               <dd className="flex items-center gap-0.5">
                 <span>{start}</span>
                 {!isSinglePeriod && (
@@ -58,7 +61,7 @@ export function ProjectItem({
                     {isOngoing ? (
                       <InfinityIcon
                         className="size-4.5 translate-y-[0.5px]"
-                        aria-label="Present"
+                        aria-label="Atual"
                       />
                     ) : (
                       <span>{end}</span>
@@ -66,6 +69,27 @@ export function ProjectItem({
                   </>
                 )}
               </dd>
+
+              {project.link && (
+                <>
+                  <Separator
+                    className="data-vertical:h-4 data-vertical:self-center"
+                    orientation="vertical"
+                    aria-hidden
+                  />
+                  <dt className="sr-only">Link</dt>
+                  <dd>
+                    <a
+                      className="relative link-underline hover:text-foreground"
+                      href={addQueryParams(project.link, UTM_PARAMS)}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {urlToName(project.link).replace(/^www\./, "")}
+                    </a>
+                  </dd>
+                </>
+              )}
             </dl>
           </div>
 
@@ -77,14 +101,14 @@ export function ProjectItem({
                   href={addQueryParams(project.link, UTM_PARAMS)}
                   target="_blank"
                   rel="noopener"
-                  aria-label="Open project"
+                  aria-label="Abrir projeto"
                 >
                   <LinkIcon className="pointer-events-none size-4" />
                 </a>
               }
             />
             <TooltipContent>
-              <p>Open project</p>
+              <p>Abrir projeto</p>
             </TooltipContent>
           </Tooltip>
 

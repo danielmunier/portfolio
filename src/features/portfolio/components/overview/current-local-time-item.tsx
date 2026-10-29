@@ -98,7 +98,7 @@ function computeClock(timeZone: string) {
     timeZone,
     hour: "2-digit",
     minute: "2-digit",
-    hour12: true,
+    hour12: false,
   }).format(now)
   const hour = parseInt(time, 10)
   const minute = parseInt(time.slice(3), 10)
@@ -113,8 +113,8 @@ function computeClock(timeZone: string) {
   const hoursDiff = Math.abs(targetOffset - viewerOffset) / 60
   const diff =
     hoursDiff < 1
-      ? " // same time"
-      : ` // ${Math.floor(hoursDiff)}h ${targetOffset > viewerOffset ? "ahead" : "behind"}`
+      ? " // mesmo horário"
+      : ` // ${Math.floor(hoursDiff)}h ${targetOffset > viewerOffset ? "à frente" : "atrás"}`
 
   return { time, hour, minute, diff }
 }

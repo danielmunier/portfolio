@@ -187,14 +187,6 @@
   @apply bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[8px_8px];
 }
 
-@utility stripe-divider {
-  @apply relative h-8;
-  &:before {
-    content: "";
-    @apply absolute left-[-100vw] -z-1 h-full w-[200vw] diagonal-stripes;
-  }
-}
-
 @utility step {
   counter-increment: step;
   @apply max-md:pl-10;
@@ -203,16 +195,6 @@
     content: counter(step);
     @apply absolute inline-flex size-6 items-center justify-center rounded-lg bg-muted text-center indent-0 text-[0.8125rem]/6 font-normal text-foreground max-md:left-0 md:-ml-10;
   }
-}
-
-@utility prose-ncdai {
-  @apply prose-headings:font-medium prose-headings:tracking-tight prose-headings:text-pretty md:prose-headings:text-balance prose-h2:text-xl prose-h3:text-lg;
-  @apply prose-a:font-normal prose-a:wrap-break-word prose-a:text-foreground prose-a:link-underline;
-  @apply prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-1 prose-code:py-px prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none retina:prose-code:border-[0.5px];
-  @apply prose-strong:font-medium;
-  @apply prose-hr:border-line;
-  @apply prose-blockquote:border-l prose-blockquote:border-line prose-blockquote:font-normal prose-blockquote:text-muted-foreground prose-blockquote:not-italic prose-blockquote:[&_p:first-of-type]:before:content-none prose-blockquote:[&_p:last-of-type]:after:content-none;
-  @apply prose-ul:marker:text-xs/none;
 }
 
 @utility code-inline {

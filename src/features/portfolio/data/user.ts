@@ -1,65 +1,60 @@
 import type { User } from "@/features/portfolio/types/user"
 
+const GITHUB_AVATAR = "https://github.com/danielmunier.png"
+
 export const USER: User = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Daniel",
+  lastName: "Munier",
+  displayName: "Daniel Munier",
+  username: "danielmunier",
   gender: "male",
-  pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
-  flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer.",
-    "Open source contributor.",
-    "I own a vintage iPhone.",
-  ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumberB64: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  emailB64: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
+  pronouns: "ele/dele",
+  bio: "Engenheiro de software full stack.",
+  flipSentences: ["Engenheiro de software full stack."],
+  address: "Rio de Janeiro, RJ, Brasil",
+  phoneNumberB64: "", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
+  emailB64: "aWRhbmllbG11bmllckBnbWFpbC5jb20=", // base64 encoded
+  website: "https://danielmunier.com.br",
+  jobTitle: "Engenheiro de Software Full Stack",
   jobs: [
     {
-      title: "Design Engineer",
-      company: "shadcncraft",
-      website: "https://shadcncraft.com?atp=ncdai",
-      experienceId: "shadcncraft",
+      title: "Desenvolvedor Full Stack Pleno",
+      company: "AcesseFy",
+      website: "https://acessefy.com.br",
+      experienceId: "acessefy",
     },
-    // {
-    //   title: "Founder",
-    //   company: "Quaric",
-    //   website: "https://quaric.com",
-    //   experienceId: "quaric",
-    // },
   ],
-  about: `- I’m Chánh Đại (call me Dai) — a Design Engineer with 5+ years of experience, known for pixel-perfect execution and obsessive attention to detail.
-- Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted projects.
-- Creator of [chanhdai.com](https://github.com/ncdai/chanhdai.com) (2.4K stars), [React Wheel Picker](https://react-wheel-picker.chanhdai.com) (70K+ weekly downloads, ▲ Vercel OSS Program), and [ZaDark](https://zadark.com) (80K+ downloads, 30K+ users) — peak metrics.
+  about: `- Sou desenvolvedor full stack e gosto de ver o que eu construo funcionando na mão de quem usa. Aprendi boa parte do que sei colocando sistema no ar e corrigindo o que a vida real mostrou.
+- Já atuei com agentes de voz em tempo real, visão computacional, IA generativa de imagem e vídeo, automação de ambientes físicos, APIs e apps web, mobile e desktop.
+- Hoje construo a portaria autônoma da [AcesseFy](https://acessefy.com.br): mais de 1.000 atendimentos por voz por mês e mais de 7 mil moradores na base (out/2026).
+- Curso Ciência da Computação na Uniamérica e mantenho projetos próprios fora do trabalho.
 `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
-  avatarSketch: "https://assets.chanhdai.com/images/avatar-sketch.webp",
+  // Follows the GitHub profile picture, so changing it there updates the site.
+  avatar: GITHUB_AVATAR,
+  avatarSketch: GITHUB_AVATAR,
   avatarVariants: {
-    lightOff: "https://assets.chanhdai.com/images/avatar-light-off.webp",
-    lightOn: "https://assets.chanhdai.com/images/avatar-light-on.webp",
-    darkOff: "https://assets.chanhdai.com/images/avatar-dark-off.webp",
-    darkOn: "https://assets.chanhdai.com/images/avatar-dark-on.webp",
+    lightOff: GITHUB_AVATAR,
+    lightOn: GITHUB_AVATAR,
+    darkOff: GITHUB_AVATAR,
+    darkOn: GITHUB_AVATAR,
   },
-  ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?t=1778602757",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
+  ogImage: GITHUB_AVATAR,
+  namePronunciationUrl: "",
+  timeZone: "America/Sao_Paulo",
   keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
+    "daniel munier",
+    "danielmunier",
+    "desenvolvedor full stack",
+    "desenvolvedor full stack rio de janeiro",
+    "engenheiro de software",
+    "portfólio",
+    "agentes de voz com ia",
+    "typescript",
+    "python",
+    "react",
+    "node.js",
+    "nestjs",
+    "rio de janeiro",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2026-10-29", // YYYY-MM-DD
 }

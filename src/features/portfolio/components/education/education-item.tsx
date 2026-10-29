@@ -39,7 +39,27 @@ export function EducationItem({ item }: { item: Education }) {
         >
           <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
             <IconTile>
-              <GraduationCapIcon />
+              {item.schoolLogo ? (
+                <>
+                  <img
+                    className={cn(
+                      "size-4 object-contain",
+                      item.schoolLogoDark && "dark:hidden"
+                    )}
+                    src={item.schoolLogo}
+                    alt=""
+                  />
+                  {item.schoolLogoDark && (
+                    <img
+                      className="hidden size-4 object-contain dark:block"
+                      src={item.schoolLogoDark}
+                      alt=""
+                    />
+                  )}
+                </>
+              ) : (
+                <GraduationCapIcon />
+              )}
             </IconTile>
 
             <h3 className="flex-1 font-medium text-balance">{item.school}</h3>
@@ -58,7 +78,7 @@ export function EducationItem({ item }: { item: Education }) {
                 {isOngoing ? (
                   <InfinityIcon
                     className="size-4.5 translate-y-[0.5px]"
-                    aria-label="Present"
+                    aria-label="Atual"
                     strokeWidth={1.5}
                   />
                 ) : (
