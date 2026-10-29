@@ -1,25 +1,16 @@
 export type Project = {
-  /** Stable unique identifier (used as list key/anchor). */
   id: string
   title: string
-  /**
-   * Project period for display and sorting.
-   * Use "MM.YYYY" format. Omit `end` for ongoing projects.
-   */
+  /** "MM.YYYY"; omit `end` for ongoing projects. */
   period: {
-    /** Start date (e.g., "05.2025"). */
     start: string
-    /** End date; leave undefined for "Present". */
     end?: string
   }
-  /** Public URL (site, repository, demo, or video). */
+  /** Public URL; the whole card links here. Empty for projects without a site. */
   link: string
-  /** Tags/technologies for chips or filtering. */
   skills: string[]
-  /** Optional rich description; Markdown and line breaks supported. */
+  /** Markdown. */
   description?: string
-  /** Inline SVG icon, framed in a tile; defaults to a box icon. */
+  /** Logo framed in a tile; defaults to a box icon. */
   icon?: React.ReactElement
-  /** Whether the project card is expanded by default in the UI. */
-  isExpanded?: boolean
 }

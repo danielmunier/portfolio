@@ -1,65 +1,25 @@
-import { Caveat, Noto_Serif } from "next/font/google"
+import { Space_Grotesk } from "next/font/google"
 import localFont from "next/font/local"
-import { GeistSans } from "geist/font/sans"
 
 import { cn } from "@/lib/utils"
 
-const fontSans = GeistSans
-
-const fontSerif = Noto_Serif({
-  weight: ["400"],
+const fontSans = Space_Grotesk({
+  subsets: ["latin"],
   display: "swap",
-  variable: "--font-serif",
+  variable: "--font-sans",
 })
 
-const fontHandwritten = Caveat({
-  weight: ["400", "500"],
-  display: "swap",
-  variable: "--font-handwritten",
-})
-
-const fontMono = localFont({
-  src: "../assets/fonts/PaperMono[wght].woff2",
-  display: "swap",
-  variable: "--font-mono",
-})
-
-// Only the iPod uses it, so it loads on demand instead of on every page.
-const fontChicagoKare = localFont({
-  src: "../assets/fonts/ChicagoKare-Regular.woff2",
+const fontPixel = localFont({
+  src: "../assets/fonts/DepartureMono-Regular.woff2",
   weight: "400",
-  display: "block",
-  preload: false,
-  variable: "--font-chicago-kare",
+  display: "swap",
+  fallback: ["ui-monospace", "monospace"],
+  variable: "--font-pixel",
 })
-
-// const fontPixel = localFont({
-//   src: "../assets/fonts/DepartureMono-Regular.woff2",
-//   weight: "400",
-//   fallback: ["monospace"],
-//   variable: "--font-pixel",
-// })
-
-// const pixelatedMSSansSerif = localFont({
-//   src: [
-//     {
-//       path: "../assets/fonts/ms_sans_serif.woff2",
-//       weight: "400",
-//     },
-//     {
-//       path: "../assets/fonts/ms_sans_serif_bold.woff2",
-//       weight: "700",
-//     },
-//   ],
-//   fallback: ["Arial"],
-//   variable: "--font-98cn",
-// })
 
 export const fontVariables = cn(
   fontSans.variable,
-  fontMono.variable,
-  fontSerif.variable,
-  fontHandwritten.variable,
-  fontChicagoKare.variable,
-  "[--font-sans:var(--font-geist-sans)]"
+  fontPixel.variable,
+  // Every mono label on the site (tags, dates, stats) uses the pixel face.
+  "[--font-mono:var(--font-pixel)]"
 )

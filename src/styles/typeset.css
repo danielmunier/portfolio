@@ -110,7 +110,7 @@
 
     /* Links. */
     &:where(a) {
-      @apply link-underline;
+      @apply underline decoration-game decoration-2 underline-offset-4 transition-colors hover:text-game;
     }
     &:where(a:focus-visible) {
       outline: 2px solid var(--color-ring, currentColor);

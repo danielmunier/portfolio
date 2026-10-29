@@ -1,10 +1,6 @@
 import type { SocialProfile } from "@/features/portfolio/types/social-links"
 
-/**
- * Keyed registry of social profiles — the single source of truth. Icons are
- * bound separately in `social-link-icons.tsx` (keyed by the same `SocialName`),
- * so adding a profile here forces the icon map to stay in sync at compile time.
- */
+/** Social profiles, keyed by network. */
 export const SOCIAL = {
   github: {
     title: "GitHub",

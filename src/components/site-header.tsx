@@ -1,30 +1,39 @@
 import Link from "next/link"
 
 import { MAIN_NAV } from "@/config/site"
-import { Separator } from "@/components/ui/separator"
-import { NavDesktop } from "@/components/nav-desktop"
 import { SiteMark } from "@/components/site-mark"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 h-(--header-height) max-w-screen overflow-x-clip bg-background px-2 pt-1">
-      <div className="screen-line-top screen-line-bottom mx-auto flex h-full items-center gap-2 border-x border-x-line pr-2 pl-4 group-has-data-[slot=layout-wide]/layout:container after:z-1 sm:gap-4 md:max-w-3xl">
-        <Link href="/" aria-label="Início">
-          <SiteMark className="h-6 shrink-0" />
+    <header className="sticky top-0 z-50 h-(--header-height) border-b-2 border-frame bg-background/90 backdrop-blur-sm">
+      <div className="mx-auto flex h-full max-w-6xl items-center gap-5 px-4">
+        <Link
+          href="/"
+          aria-label="Início"
+          className="flex items-center gap-2.5 hover:text-game"
+        >
+          <SiteMark className="h-5 shrink-0" />
+          <span className="font-pixel text-sm max-[22rem]:hidden">
+            danielmunier
+          </span>
         </Link>
 
         <div className="flex-1" />
 
-        <NavDesktop items={MAIN_NAV} />
+        <nav className="flex items-center gap-4 font-pixel text-xs uppercase max-sm:hidden">
+          {MAIN_NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="hover:text-game hover:underline hover:decoration-2 hover:underline-offset-4"
+            >
+              {item.title}
+            </Link>
+          ))}
+        </nav>
 
-        <div className="flex items-center">
-          <Separator
-            orientation="vertical"
-            className="mr-2 max-sm:hidden data-vertical:h-5 data-vertical:self-center"
-          />
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </div>
     </header>
   )

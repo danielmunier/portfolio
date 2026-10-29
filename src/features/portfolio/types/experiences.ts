@@ -1,39 +1,24 @@
 export type ExperiencePosition = {
   id: string
   title: string
-  /**
-   * Employment period of the position.
-   * Use "MM.YYYY" or "YYYY" format. Omit `end` for current roles.
-   */
+  /** "MM.YYYY"; omit `end` for the current role. */
   employmentPeriod: {
-    /** Start date (e.g., "10.2022" or "2020"). */
     start: string
-    /** End date; leave undefined for "Present". */
     end?: string
   }
-  /** Full-time | Part-time | Contract | Internship, etc. */
-  employmentType?: string
+  /** Markdown. */
   description?: string
-  /** UI icon to represent the role type. */
-  icon?: React.ReactElement
   skills?: string[]
-  /** Whether the position is expanded by default in the UI. */
-  isExpanded?: boolean
 }
 
 export type Experience = {
   id: string
   companyName: string
-  /** URL to the company logo (absolute URL or path under /public). */
+  /** Path under /public. */
   companyLogo?: string
-  /** UI icon to represent the company; used if `companyLogo` is not provided. */
-  companyIcon?: React.ReactElement
-  /** URL to the company's website. */
   companyWebsite?: string
   location?: string
-  locationType?: "On-site" | "Hybrid" | "Remote"
-  /** Roles held at this company; keep newest first for display. */
+  /** Roles held at this company; newest first. */
   positions: ExperiencePosition[]
-  /** Marks the company as the current employer for highlighting. */
   isCurrentEmployer?: boolean
 }

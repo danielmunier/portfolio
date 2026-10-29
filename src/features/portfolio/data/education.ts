@@ -12,7 +12,5 @@ export const EDUCATION: Education[] = [
       start: "12.2023",
       end: "03.2027",
     },
-    description: "- Previsão de conclusão em 03/2027.",
-    isExpanded: true,
   },
 ]

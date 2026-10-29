@@ -1,5 +1,3 @@
-import { CodeXmlIcon } from "lucide-react"
-
 import type { Experience } from "@/features/portfolio/types/experiences"
 
 export const EXPERIENCES: Experience[] = [
@@ -16,7 +14,6 @@ export const EXPERIENCES: Experience[] = [
         employmentPeriod: {
           start: "05.2025",
         },
-        icon: <CodeXmlIcon />,
         description: `Startup de portaria autônoma com IA para condomínios residenciais e comerciais. Um agente de voz atende o visitante no totem, confere o rosto, chama o morador e libera a entrada. Atuo no sistema inteiro, do áudio em tempo real ao banco de dados, do app do morador ao deploy, e acompanho a operação depois que vai para o ar.
 
 Em produção (out/2026): mais de 1.000 atendimentos por voz por mês e mais de 7 mil moradores na base.
@@ -39,7 +36,6 @@ Em produção (out/2026): mais de 1.000 atendimentos por voz por mês e mais de 
           "Docker",
           "Linux",
         ],
-        isExpanded: true,
       },
     ],
     isCurrentEmployer: true,
@@ -57,7 +53,6 @@ Em produção (out/2026): mais de 1.000 atendimentos por voz por mês e mais de 
           start: "01.2022",
           end: "01.2023",
         },
-        icon: <CodeXmlIcon />,
         description: `- Landing pages e aplicações web em Next.js para divulgação de serviços e projetos.
 - Automação de processos internos e manutenção da infraestrutura de TI.`,
         skills: ["Next.js", "React", "Automação", "Infraestrutura de TI"],

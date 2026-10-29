@@ -14,14 +14,9 @@ export const SITE_INFO = {
   keywords: USER.keywords,
 }
 
-export const LICENSE = {
-  name: "MIT License",
-  url: "https://github.com/danielmunier/portfolio/blob/main/LICENSE",
-}
-
 export const META_THEME_COLORS = {
-  light: "#ffffff",
-  dark: "#09090b",
+  light: "#f3efe4",
+  dark: "#0c0f0d",
 }
 
 export const MAIN_NAV: NavItem<Route>[] = [
@@ -39,18 +34,7 @@ export const MAIN_NAV: NavItem<Route>[] = [
   },
 ]
 
-export const MOBILE_NAV: NavItem<Route>[] = [
-  {
-    title: "Início",
-    href: "/",
-  },
-  ...MAIN_NAV,
-]
-
 export const GITHUB_USERNAME = SOCIAL.github.handle
-export const SOURCE_CODE_GITHUB_REPO = "danielmunier/portfolio"
-export const SOURCE_CODE_GITHUB_URL =
-  "https://github.com/danielmunier/portfolio"
 
 export const UTM_PARAMS = {
   utm_source: "danielmunier.com.br",

@@ -2,7 +2,6 @@ import { readFile } from "node:fs/promises"
 import { join } from "node:path"
 import { ImageResponse } from "next/og"
 
-import { getMarkSVG } from "@/components/site-mark"
 import { USER } from "@/features/portfolio/data/user"
 
 export const alt = `${USER.displayName}, desenvolvedor full stack`
@@ -12,13 +11,20 @@ export const size = {
 }
 export const contentType = "image/png"
 
-const fontsDir = join(process.cwd(), "src/assets/fonts")
-const geistSemiBold = await readFile(join(fontsDir, "Geist-SemiBold.ttf"))
-const geistMono = await readFile(join(fontsDir, "GeistMono-Regular.ttf"))
+// Same pixel face as the site; the image renderer can't read woff2.
+const pixelFont = await readFile(
+  join(process.cwd(), "src/assets/fonts/DepartureMono-Regular.otf")
+)
 
-const markDataUri = `data:image/svg+xml;base64,${Buffer.from(
-  getMarkSVG().replace('fill="currentColor"', 'fill="#fafafa"')
-).toString("base64")}`
+const COLORS = {
+  background: "#0c0f0d",
+  card: "#121714",
+  foreground: "#e6efe8",
+  muted: "#8a9a8e",
+  frame: "#3a4a3f",
+  shadow: "#1e5c30",
+  game: "#39d353",
+}
 
 // Rendered at build time; a failed fetch just leaves the photo out.
 async function getAvatarDataUri() {
@@ -42,67 +48,98 @@ export default async function Image() {
         width: "100%",
         height: "100%",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        padding: 72,
-        background: "#09090b",
-        backgroundImage:
-          "radial-gradient(rgba(255,255,255,0.08) 1.5px, transparent 0)",
+        alignItems: "center",
+        justifyContent: "center",
+        background: COLORS.background,
+        backgroundImage: `radial-gradient(${COLORS.frame} 1.5px, transparent 0)`,
         backgroundSize: "24px 24px",
-        color: "#fafafa",
-        fontFamily: "Geist",
+        fontFamily: "Departure Mono",
+        color: COLORS.foreground,
       }}
     >
-      <img src={markDataUri} width={150} height={60} alt="" />
-
-      <div style={{ display: "flex", alignItems: "center", gap: 48 }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 56,
+          padding: 56,
+          width: 1040,
+          background: COLORS.card,
+          border: `4px solid ${COLORS.frame}`,
+          boxShadow: `12px 12px 0 0 ${COLORS.shadow}`,
+        }}
+      >
         {avatar && (
           <img
             src={avatar}
-            width={220}
-            height={220}
+            width={260}
+            height={260}
             alt=""
             style={{
-              borderRadius: 9999,
-              border: "2px solid rgba(255,255,255,0.15)",
+              border: `4px solid ${COLORS.frame}`,
+              boxShadow: `8px 8px 0 0 ${COLORS.shadow}`,
             }}
           />
         )}
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ fontSize: 84, letterSpacing: -2, lineHeight: 1 }}>
-            {USER.displayName}
-          </div>
-          <div
-            style={{
-              fontFamily: "Geist Mono",
-              fontSize: 34,
-              color: "#a1a1aa",
-            }}
-          >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            gap: 18,
+          }}
+        >
+          <div style={{ fontSize: 28, color: COLORS.game }}>PLAYER 1</div>
+          <div style={{ fontSize: 76, lineHeight: 1 }}>{USER.displayName}</div>
+          <div style={{ fontSize: 32, color: COLORS.muted }}>
             Desenvolvedor Full Stack
           </div>
-        </div>
-      </div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          fontFamily: "Geist Mono",
-          fontSize: 26,
-          color: "#71717a",
-        }}
-      >
-        <span>danielmunier.com.br</span>
-        <span>{USER.address}</span>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              marginTop: 18,
+              fontSize: 26,
+            }}
+          >
+            <span>HP</span>
+            <div
+              style={{
+                display: "flex",
+                flex: 1,
+                gap: 6,
+                padding: 6,
+                border: `4px solid ${COLORS.frame}`,
+              }}
+            >
+              {Array.from({ length: 10 }, (_, index) => (
+                <div
+                  key={index}
+                  style={{ flex: 1, height: 18, background: COLORS.game }}
+                />
+              ))}
+            </div>
+            <span>100/100</span>
+          </div>
+
+          <div style={{ fontSize: 26, color: COLORS.muted, marginTop: 8 }}>
+            danielmunier.com.br
+          </div>
+        </div>
       </div>
     </div>,
     {
       ...size,
       fonts: [
-        { name: "Geist", data: geistSemiBold, style: "normal", weight: 600 },
-        { name: "Geist Mono", data: geistMono, style: "normal", weight: 400 },
+        {
+          name: "Departure Mono",
+          data: pixelFont,
+          style: "normal",
+          weight: 400,
+        },
       ],
     }
   )

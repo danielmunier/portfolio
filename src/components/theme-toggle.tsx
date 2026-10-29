@@ -11,8 +11,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-// import { MoonIcon } from "./animated-icons/moon-icon"
-// import { SunMediumIcon } from "./animated-icons/sun-medium-icon"
 import { Button } from "./ui/button"
 import { Kbd } from "./ui/kbd"
 
@@ -49,11 +47,6 @@ export function ThemeToggle() {
               className="absolute size-12 pointer-fine:hidden"
               aria-hidden
             />
-            {/* <MoonIcon className="hidden [html.dark_&]:block" aria-hidden />
-            <SunMediumIcon
-              className="hidden [html.light_&]:block"
-              aria-hidden
-            /> */}
             <DarkSideIcon className="size-3.5" />
           </Button>
         }

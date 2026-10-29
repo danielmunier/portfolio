@@ -8,13 +8,8 @@ export const USER: User = {
   displayName: "Daniel Munier",
   username: "danielmunier",
   gender: "male",
-  pronouns: "ele/dele",
-  bio: "Engenheiro de software full stack.",
-  flipSentences: ["Engenheiro de software full stack."],
   address: "Rio de Janeiro, RJ, Brasil",
-  phoneNumberB64: "", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  emailB64: "aWRhbmllbG11bmllckBnbWFpbC5jb20=", // base64 encoded
-  website: "https://danielmunier.com.br",
+  emailB64: "aWRhbmllbG11bmllckBnbWFpbC5jb20=",
   jobTitle: "Engenheiro de Software Full Stack",
   jobs: [
     {
@@ -26,21 +21,11 @@ export const USER: User = {
   ],
   about: `- Sou desenvolvedor full stack e gosto de ver o que eu construo funcionando na mão de quem usa. Aprendi boa parte do que sei colocando sistema no ar e corrigindo o que a vida real mostrou.
 - Já atuei com agentes de voz em tempo real, visão computacional, IA generativa de imagem e vídeo, automação de ambientes físicos, APIs e apps web, mobile e desktop.
-- Hoje construo a portaria autônoma da [AcesseFy](https://acessefy.com.br): mais de 1.000 atendimentos por voz por mês e mais de 7 mil moradores na base (out/2026).
+- Ajudei a construir desde o início a portaria autônoma da [AcesseFy](https://acessefy.com.br), que hoje faz mais de 1.000 atendimentos por voz por mês e tem mais de 7 mil moradores na base (out/2026).
 - Curso Ciência da Computação na Uniamérica e mantenho projetos próprios fora do trabalho.
 `,
   // Follows the GitHub profile picture, so changing it there updates the site.
   avatar: GITHUB_AVATAR,
-  avatarSketch: GITHUB_AVATAR,
-  avatarVariants: {
-    lightOff: GITHUB_AVATAR,
-    lightOn: GITHUB_AVATAR,
-    darkOff: GITHUB_AVATAR,
-    darkOn: GITHUB_AVATAR,
-  },
-  ogImage: GITHUB_AVATAR,
-  namePronunciationUrl: "",
-  timeZone: "America/Sao_Paulo",
   keywords: [
     "daniel munier",
     "danielmunier",

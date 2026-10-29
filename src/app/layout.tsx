@@ -2,7 +2,6 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
-import { NuqsAdapter } from "nuqs/adapters/next/app"
 import type { WebSite, WithContext } from "schema-dts"
 
 import { JSON_LD_ID, personJsonLd } from "@/config/json-ld"
@@ -124,35 +123,11 @@ export default function RootLayout({
           since we found the regular `<script>` tag to not execute when rendering a not-found page.
          */}
         <Script src={`data:text/javascript;base64,${btoa(darkModeScript)}`} />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                var value = localStorage.getItem('avatarLights');
-                document.documentElement.dataset.avatarLights = JSON.parse(value || '"on"');
-              } catch(_) {}
-            `,
-          }}
-        />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                var value = localStorage.getItem('sidebarOpen');
-                document.documentElement.dataset.sidebarOpen = JSON.parse(value || 'true');
-              } catch(_) {}
-            `,
-          }}
-        />
         <JsonLdScript data={getWebSiteJsonLd()} />
       </head>
 
       <body>
-        <Providers>
-          <NuqsAdapter>{children}</NuqsAdapter>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

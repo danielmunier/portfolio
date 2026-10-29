@@ -1,8 +1,8 @@
 # danielmunier.com.br
 
-Meu portfólio: quem eu sou, o que uso, onde trabalhei e os projetos que fiz.
+Meu portfólio: quem eu sou, o que uso, onde trabalhei e os projetos que fiz. Visual de jogo retrô, com um bug em pixel que fica tirando HP da minha foto.
 
-Feito a partir do [chanhdai.com](https://github.com/ncdai/chanhdai.com), de Chánh Đại, sob a licença MIT. O código veio de lá; os dados, a marca e os textos são meus.
+Começou a partir do [chanhdai.com](https://github.com/ncdai/chanhdai.com), de Chánh Đại, sob a licença MIT, e foi redesenhado do zero no visual. Os dados, a marca e os textos são meus.
 
 ## Rodar local
 
@@ -31,4 +31,4 @@ Imagens ficam em `public/images/`.
 
 ## Stack
 
-Next.js 16, React 19, Tailwind CSS v4, shadcn/ui e Motion. Publicado na Vercel.
+Next.js 16, React 19, Tailwind CSS v4 e Motion. Fontes Departure Mono e Space Grotesk. Publicado na Vercel.

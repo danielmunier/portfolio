@@ -15,7 +15,3 @@ export function SiteMark(props: React.ComponentProps<"svg">) {
     </svg>
   )
 }
-
-export function getMarkSVG() {
-  return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 640 256"><path fill="currentColor" d="${MARK_PATH}"/></svg>`
-}

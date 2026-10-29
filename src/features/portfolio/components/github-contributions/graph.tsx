@@ -11,7 +11,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import type { Activity } from "@/registry/components/contribution-graph"
+import type { Activity } from "@/components/contribution-graph"
 import {
   ContributionGraph,
   ContributionGraphBlock,
@@ -19,7 +19,7 @@ import {
   ContributionGraphFooter,
   ContributionGraphLegend,
   ContributionGraphTotalCount,
-} from "@/registry/components/contribution-graph"
+} from "@/components/contribution-graph"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 // Weeks that fit the 768px column at 16px blocks, so it fills the row without
@@ -61,7 +61,7 @@ export function GitHubContributionGraph({
   return (
     <figure className={HOVER_PALETTE}>
       <ContributionGraph
-        className="mx-auto gap-4 py-4"
+        className="gap-3"
         data={data}
         blockSize={16}
         blockMargin={3}
@@ -69,7 +69,8 @@ export function GitHubContributionGraph({
         aria-label="Gráfico de contribuições no GitHub"
       >
         <ContributionGraphCalendar
-          className="px-4 **:data-[slot=month-labels]:text-muted-foreground"
+          // Scales with the column instead of scrolling sideways.
+          className="**:data-[slot=month-labels]:text-muted-foreground [&>svg]:h-auto [&>svg]:w-full"
           title="Contribuições no GitHub"
           aria-hidden
         >
@@ -99,7 +100,7 @@ export function GitHubContributionGraph({
           )}
         </ContributionGraphCalendar>
 
-        <ContributionGraphFooter className="px-4 text-sm">
+        <ContributionGraphFooter className="text-sm">
           <ContributionGraphTotalCount>
             {({ totalCount }) => (
               <figcaption className="text-pretty text-muted-foreground tabular-nums">
@@ -112,7 +113,7 @@ export function GitHubContributionGraph({
                 . Fonte:{" "}
                 <a
                   href={SOCIAL.github.href}
-                  className="link-underline"
+                  className="underline decoration-game underline-offset-2 hover:text-game"
                   target="_blank"
                   rel="noopener"
                 >

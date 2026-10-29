@@ -6,16 +6,22 @@ Next.js 16 (App Router) single-page portfolio, based on the MIT-licensed chanhda
 
 ## Project structure
 
-| Directory                              | Purpose                                                        |
-| -------------------------------------- | -------------------------------------------------------------- |
-| `src/app/`                             | App Router pages and layouts (home, 404, sitemap, robots)      |
-| `src/components/`                      | Shared UI components (header, footer, nav, `ui/` primitives)   |
-| `src/features/portfolio/`              | Home page sections (`components/`) and their content (`data/`) |
-| `src/registry/`                        | Leftover template components still used by the home page       |
-| `src/config/`                          | Site config (`site.ts`) and JSON-LD                            |
-| `src/hooks/`, `src/lib/`, `src/utils/` | Hooks, libraries, utilities                                    |
+| Directory                              | Purpose                                                              |
+| -------------------------------------- | -------------------------------------------------------------------- |
+| `src/app/`                             | App Router pages and layouts (home, 404, share image, sitemap)       |
+| `src/components/`                      | Shared components (header, footer, theme toggle, `ui/` primitives)   |
+| `src/features/portfolio/components/`   | Player card with the game screen, section windows and the sections   |
+| `src/features/portfolio/data/`         | All page content                                                     |
+| `src/config/`                          | Site config (`site.ts`) and JSON-LD                                  |
+| `src/hooks/`, `src/lib/`, `src/utils/` | Hooks, libraries, utilities                                          |
 
 All page content lives in `src/features/portfolio/data/`. Images live in `public/images/`.
+
+## Look and feel
+
+- Retro game style: pixel font (Departure Mono) for titles, labels and tags; Space Grotesk for body text.
+- Colors come from tokens in `src/styles/globals.css`: paper and ink in light mode, a green terminal in dark mode; `game` is the accent.
+- Sections are `Window` frames (thick border, hard shadow, pixel title bar).
 
 ## Content rules
 
