@@ -12,13 +12,8 @@ export type User = {
   emailB64: string
   /** Primary role shown on the profile */
   jobTitle: string
-  /** Current jobs; the first one shows on the player card */
-  jobs: {
-    title: string
-    company: string
-    website: string
-    experienceId?: string
-  }[]
+  /** Current position, shown next to the briefcase on the player card */
+  currentRole: string
   /** Rich about section; supports Markdown */
   about: string
   /** Public URL to avatar image */

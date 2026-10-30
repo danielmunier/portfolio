@@ -8,8 +8,8 @@ export const PROJECTS: Project[] = [
       start: "08.2026",
     },
     link: "https://www.sampasky.com.br",
-    skills: ["Projeto AcesseFy", "Sampa Sky", "Agente de voz", "IoT"],
-    description: `Projeto da AcesseFy para o Sampa Sky, em São Paulo. O MANO fica na sala de reunião como um assistente de voz: anota os pedidos de quem está ali e manda para o restaurante, que serve na própria sala. Também controla a sala por IoT, como persianas, luz, TV e ar-condicionado.`,
+    skills: ["Para AcesseFy", "Sampa Sky", "Agente de voz", "IoT"],
+    description: `Projeto para a AcesseFy no Sampa Sky, em São Paulo. O MANO fica na sala de reunião como um assistente de voz: anota os pedidos de quem está ali e manda para o restaurante, que serve na própria sala. Também controla a sala por IoT, como persianas, luz, TV e ar-condicionado.`,
     icon: <img src="/images/projects/sampasky.png" alt="" />,
   },
   {
@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     },
     link: "https://segsummit.com.br",
     skills: [
-      "Projeto AcesseFy",
+      "Para AcesseFy",
       "Evento",
       "Totem com IA",
       "GPU na nuvem",
@@ -40,8 +40,8 @@ export const PROJECTS: Project[] = [
       end: "08.2026",
     },
     link: "https://iasec360.acessefy.com.br",
-    skills: ["Projeto AcesseFy", "Evento", "Avatar de voz", "WhatsApp"],
-    description: `Projeto da AcesseFy para o evento IA SEC 360, voltado a síndicos de condomínio.
+    skills: ["Para AcesseFy", "Evento", "Avatar de voz", "WhatsApp"],
+    description: `Projeto para a AcesseFy no evento IA SEC 360, voltado a síndicos de condomínio.
 - Um avatar de voz apresentava o evento, coletava nome, telefone e empresa e enviava o convite pelo WhatsApp.`,
     icon: <img src="/images/projects/iasec360.png" alt="" />,
   },

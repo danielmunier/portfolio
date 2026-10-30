@@ -3,7 +3,6 @@ import type { ProfilePage, WithContext } from "schema-dts"
 
 import { JSON_LD_ID } from "@/config/json-ld"
 import { JsonLdScript } from "@/lib/json-ld"
-import { absoluteUrl } from "@/lib/utils"
 import { AnimatedTitle } from "@/components/animated-title"
 import { PlayerCard } from "@/features/portfolio/components/player-card"
 import { About } from "@/features/portfolio/components/sections/about"
@@ -50,7 +49,7 @@ function getProfilePageJsonLd(): WithContext<ProfilePage> {
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "@id": absoluteUrl("/"),
+    "@id": JSON_LD_ID.profilePage,
     dateCreated: new Date(USER.dateCreated).toISOString(),
     dateModified: new Date().toISOString(),
     // Reference the Person defined in the WebSite node (rendered globally in

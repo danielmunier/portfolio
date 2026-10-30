@@ -13,6 +13,7 @@ import { USER } from "@/features/portfolio/data/user"
  * The "#fragment" keeps each node id distinct from the page URL itself.
  */
 export const JSON_LD_ID = {
+  profilePage: `${SITE_INFO.url}/`,
   website: `${SITE_INFO.url}/#website`,
   person: `${SITE_INFO.url}/#person`,
 } as const

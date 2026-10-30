@@ -16,7 +16,7 @@ export const EXPERIENCES: Experience[] = [
         },
         description: `Startup de portaria autônoma com IA para condomínios residenciais e comerciais. Um agente de voz atende o visitante no totem, confere o rosto, chama o morador e libera a entrada. Atuo no sistema inteiro, do áudio em tempo real ao banco de dados, do app do morador ao deploy, e acompanho a operação depois que vai para o ar.
 
-Em produção (out/2026): mais de 1.000 atendimentos por voz por mês e mais de 7 mil moradores na base.
+Ajudei a construir desde o início a portaria autônoma da AcesseFy, que hoje faz mais de 1.000 atendimentos por voz por mês e tem mais de 7 mil moradores na base (out/2026).
 
 - Agente de voz multiagente (triagem, coleta de dados, foto e finalização), com ferramentas para os agentes de IA.
 - Ponte de chamadas de voz do WhatsApp até o agente com a API de chamadas da Meta, e interfone web com vídeo no app do morador.

@@ -11,18 +11,9 @@ export const USER: User = {
   address: "Rio de Janeiro, RJ, Brasil",
   emailB64: "aWRhbmllbG11bmllckBnbWFpbC5jb20=",
   jobTitle: "Engenheiro de Software Full Stack",
-  jobs: [
-    {
-      title: "Desenvolvedor Full Stack Pleno",
-      company: "AcesseFy",
-      website: "https://acessefy.com.br",
-      experienceId: "acessefy",
-    },
-  ],
+  currentRole: "Desenvolvedor Full Stack Pleno",
   about: `- Sou desenvolvedor full stack e gosto de ver o que eu construo funcionando na mão de quem usa. Aprendi boa parte do que sei colocando sistema no ar e corrigindo o que a vida real mostrou.
 - Já atuei com agentes de voz em tempo real, visão computacional, IA generativa de imagem e vídeo, automação de ambientes físicos, APIs e apps web, mobile e desktop.
-- Ajudei a construir desde o início a portaria autônoma da [AcesseFy](https://acessefy.com.br), que hoje faz mais de 1.000 atendimentos por voz por mês e tem mais de 7 mil moradores na base (out/2026).
-- Curso Ciência da Computação na Uniamérica e mantenho projetos próprios fora do trabalho.
 `,
   // Follows the GitHub profile picture, so changing it there updates the site.
   avatar: GITHUB_AVATAR,

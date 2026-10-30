@@ -9,7 +9,6 @@ import { GameScreen } from "./game-screen"
 /** Left column: the arena, who Daniel is and how to reach him. */
 export function PlayerCard() {
   const email = atob(USER.emailB64)
-  const job = USER.jobs[0]
 
   return (
     <div className="border-2 border-frame bg-card p-4 shadow-[6px_6px_0_0_var(--frame-shadow)]">
@@ -24,20 +23,10 @@ export function PlayerCard() {
       </div>
 
       <ul className="mt-4 space-y-2 text-sm [&_svg]:size-4 [&_svg]:shrink-0 [&_svg]:text-muted-foreground">
-        {job && (
-          <li className="flex items-center gap-2.5">
-            <BriefcaseBusinessIcon aria-hidden />
-            <span>
-              {job.title} na{" "}
-              <a
-                className="font-medium underline decoration-game decoration-2 underline-offset-4 hover:text-game"
-                href={`#experience-${job.experienceId}`}
-              >
-                {job.company}
-              </a>
-            </span>
-          </li>
-        )}
+        <li className="flex items-center gap-2.5">
+          <BriefcaseBusinessIcon aria-hidden />
+          <span>{USER.currentRole}</span>
+        </li>
         <li className="flex items-center gap-2.5">
           <MapPinIcon aria-hidden />
           <span>{USER.address}</span>
