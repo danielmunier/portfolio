@@ -66,6 +66,8 @@
   --game: #1f9d4c;
   --frame: #16130f;
   --frame-shadow: #16130f;
+  /* Green on paper reads far weaker than green on black, so the digits need more opacity here. */
+  --binary-field-gain: 2;
   --header-height: --spacing(15);
 }
 
@@ -94,6 +96,7 @@
   --game: #39d353;
   --frame: #3a4a3f;
   --frame-shadow: #1e5c30;
+  --binary-field-gain: 1;
 }
 
 @layer base {

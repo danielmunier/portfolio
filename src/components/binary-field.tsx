@@ -122,6 +122,7 @@ export function BinaryField() {
     let cool: Rgb = [0, 0, 0]
     let hot: Rgb = [0, 0, 0]
     let coolStyle = ""
+    let gain = 1
     const mouse = { x: -9999, y: -9999 }
 
     // The canvas normalizes any CSS color to #rrggbb.
@@ -135,6 +136,10 @@ export function BinaryField() {
       cool = readToken("--game")
       hot = readToken("--foreground")
       coolStyle = `rgb(${cool.join(", ")})`
+      gain =
+        parseFloat(
+          getComputedStyle(root).getPropertyValue("--binary-field-gain")
+        ) || 1
     }
 
     const resize = () => {
@@ -186,7 +191,7 @@ export function BinaryField() {
             1,
             Math.abs(x - (x < left ? left : right)) / 220 + 0.35
           )
-          const base = (0.12 + wave * 0.22) * edgeFade
+          const base = Math.min(1, (0.12 + wave * 0.22) * edgeFade * gain)
 
           let px = x
           let py = y
