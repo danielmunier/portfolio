@@ -59,10 +59,12 @@ function createFluid(cols: number, rows: number) {
         const sc = clamp(Math.round(c - vx[i] * 0.9), 0, cols - 1)
         const sr = clamp(Math.round(r - vy[i] * 0.9), 0, rows - 1)
         const j = sr * cols + sc
-        const l = c > 0 ? j - 1 : j
-        const rt = c < cols - 1 ? j + 1 : j
-        const u = r > 0 ? j - cols : j
-        const d = r < rows - 1 ? j + cols : j
+        // Neighbors of the source cell, not of this one: near an edge the source
+        // is clamped, and reading past the grid would put NaN in the whole field.
+        const l = sc > 0 ? j - 1 : j
+        const rt = sc < cols - 1 ? j + 1 : j
+        const u = sr > 0 ? j - cols : j
+        const d = sr < rows - 1 ? j + cols : j
         en2[i] =
           (en[j] * 0.52 + (en[l] + en[rt] + en[u] + en[d]) * 0.12) * 0.965
         vx2[i] =
