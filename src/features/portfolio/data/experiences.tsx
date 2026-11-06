@@ -31,7 +31,6 @@ Ajudei a construir desde o início a portaria autônoma da AcesseFy, que hoje fa
           "React 19",
           "React Native",
           "FastAPI",
-          "WebRTC",
           "WebSocket",
           "Docker",
           "Linux",
